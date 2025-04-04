@@ -1,6 +1,6 @@
 ---
-title: "Class Title Here"
-author: "Amy Yarnell, Author2, Author3"
+title: "Introduction to R and the Tidyverse"
+author: "Amy Yarnell, Christine Nieman Hislop"
 title-block-banner: white
 title-block-banner-color: black
 navbar:
@@ -21,8 +21,9 @@ css: styles.scss
 
 | Date | Topic                     |
 |------|---------------------------|
-| TBD  | TBD |
-| TBD  | TBD  |
+| April 10, 2025  | R Basics |
+| April 17, 2025  | Data Wrangling |
+| April 24, 2025  | Data Visualization
 
 
 ## Acknowledgements
