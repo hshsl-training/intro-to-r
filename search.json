@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Introduction to R and the Tidyverse",
+    "section": "",
+    "text": "Session 1: Intro to R and RStudio This session will provide a solid foundation in working with R and RStudio and lay the groundwork to enable participants to explore more advanced topics in R programming. Topics covered include:\n• Navigating the RStudio interface, installing packages, getting help • Naming and working with objects • Using functions • Identifying R data types and structures • Working with scripts\nSession 2: Data Wrangling with R - Introduction to the Tidyverse This session will introduce the concept of “tidy” data, and the versatile collection of packages known as the Tidyverse. Participants will get hands-on experience wrangling real datasets. Topics covered include:\n• Importing data from external files • Subsetting and filtering data • Split-Apply-Combine analysis workflow • Creating variables • Joining data tables\nSession 3: Data Visualization in R with ggplot2 Learn how to use ggplot2, a robust Tidyverse package used to create high quality graphics for exploring and communicating your data. We will go beyond basic graphs and learn how to customize and annotate our graphs for more effective storytelling. Topics covered include:\n• Visualization best practices • Grammar of graphics - ggplot2 layers, aesthetics, and geoms • Choosing an effective graph type for your data • Customizing labels, axes, legends, and more • Choosing a color palette and themes\nSchedule\n\n\n\nDate\nTopic\n\n\n\n\nApril 10, 2025\nR Basics\n\n\nApril 17, 2025\nData Wrangling\n\n\nApril 24, 2025\nData Visualization"
+  },
+  {
+    "objectID": "index.html#course-description",
+    "href": "index.html#course-description",
+    "title": "Introduction to R and the Tidyverse",
+    "section": "",
+    "text": "Session 1: Intro to R and RStudio This session will provide a solid foundation in working with R and RStudio and lay the groundwork to enable participants to explore more advanced topics in R programming. Topics covered include:\n• Navigating the RStudio interface, installing packages, getting help • Naming and working with objects • Using functions • Identifying R data types and structures • Working with scripts\nSession 2: Data Wrangling with R - Introduction to the Tidyverse This session will introduce the concept of “tidy” data, and the versatile collection of packages known as the Tidyverse. Participants will get hands-on experience wrangling real datasets. Topics covered include:\n• Importing data from external files • Subsetting and filtering data • Split-Apply-Combine analysis workflow • Creating variables • Joining data tables\nSession 3: Data Visualization in R with ggplot2 Learn how to use ggplot2, a robust Tidyverse package used to create high quality graphics for exploring and communicating your data. We will go beyond basic graphs and learn how to customize and annotate our graphs for more effective storytelling. Topics covered include:\n• Visualization best practices • Grammar of graphics - ggplot2 layers, aesthetics, and geoms • Choosing an effective graph type for your data • Customizing labels, axes, legends, and more • Choosing a color palette and themes\nSchedule\n\n\n\nDate\nTopic\n\n\n\n\nApril 10, 2025\nR Basics\n\n\nApril 17, 2025\nData Wrangling\n\n\nApril 24, 2025\nData Visualization"
+  },
+  {
+    "objectID": "index.html#acknowledgements",
+    "href": "index.html#acknowledgements",
+    "title": "Introduction to R and the Tidyverse",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Introduction to R and the Tidyverse",
+    "section": "License",
+    "text": "License\nThis work is licensed under a Creative Commons Attribution 4.0 International License (CC BY)"
+  }
+]
