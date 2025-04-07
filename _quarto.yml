@@ -4,14 +4,15 @@ project:
   - "index.qmd"
   - "*.Rmd"
   - "*.md"
+  - "*.qmd"
   
 
 website:
-  title: "CDABS Class Title Here"
+  title: ""
   page-footer:
     right: |
       [![](https://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by.svg){fig-alt="CC BY" width=125px}](https://creativecommons.org/licenses/by-sa/4.0/)
-  # repo-url: "add URL here"
+   repo-url: "https://hshsl-training.github.io/intro-to-r/"
   repo-actions: [edit, issue]
   navbar:
     background: "#c5251d"
@@ -22,6 +23,12 @@ website:
     left:
       - text: "Home"
         file: index.qmd
+      - text: R Basics
+        file: 01-RBasics.Rmd
+      - text: Data Wrangling
+        file: 02-DataWrangling.qmd
+      - text: Data Visualization
+        file: 03-DataVisualization.qmd
      # - sidebar:sidebar id - repeat as needed for sidebar entries
     
 
