@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://hshsl-training.github.io/intro-to-r/02-DataWrangling.html</loc>
+    <lastmod>2024-07-25T14:25:02.889Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hshsl-training.github.io/intro-to-r/about.html</loc>
+    <lastmod>2025-04-07T18:51:33.147Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hshsl-training.github.io/intro-to-r/01-RBasics.html</loc>
+    <lastmod>2022-09-19T18:34:14.000Z</lastmod>
+  </url>
+  <url>
     <loc>https://hshsl-training.github.io/intro-to-r/index.html</loc>
     <lastmod>2025-04-07T19:14:14.202Z</lastmod>
+  </url>
+  <url>
+    <loc>https://hshsl-training.github.io/intro-to-r/03-DataVisualization.html</loc>
+    <lastmod>2024-07-25T13:09:42.316Z</lastmod>
   </url>
 </urlset>
