@@ -4,8 +4,6 @@ editor_options:
     wrap: 72
 ---
 
-# (PART\*) Session I {.unnumbered}
-
 # Introduction to R and RStudio
 
 ```{r, include = FALSE}
@@ -135,14 +133,23 @@ The Default Layout is:
 knitr::include_graphics("images/rstudio.png")
 ```
 
-### RStudio Cloud
 
-RStudio Cloud is a browser-based version of RStudio. It will allow you
-to use RStudio without needing to download anything to your computer.
-You can also easily share your R projects with others. While we
-recommend downloading RStudio for regular use, we will be using RStudio
-Cloud for these workshops so we can easily share files and packages with
-you.
+::: {.callout-tip appearence="minimal" collapse="true"}
+
+### Follow Along at Home
+
+There are two options:
+
+#### RStudio
+1. Follow the instructions above to download R and RStudio to your personal computer
+2. Download the folder `Session01_RBasics` from <https://osf.io/6ra5v/files/osfstorage> and unzip it to your computer in a place you'll be able to find it easily, such as your Desktop or Documents folder.
+
+#### Posit Cloud
+
+Posit (RStudio) Cloud is a browser-based version of RStudio. It will
+allow you to use RStudio without needing to download anything to your
+computer. Posit Cloud automatically organizes things into Projects. You can also easily share your R projects with others. 
+
 
 Get Started:
 
@@ -151,28 +158,10 @@ Get Started:
 2.  Go to the class project <https://rstudio.cloud/content/4241048>
 3.  Note the text that marks this as a Temporary Copy. Select the
     `Save a Permanent Copy` button to begin working!
+    
+:::
 
-## Using this book
 
-**For these instructions code will appear in the gray box as follows:**
-
-    fake code
-
-To run the code you can copy and paste the code and run it in your
-RStudio session console at the prompt `>` which looks like a greater
-than symbol.
-
-    > fake code
-
-The code can also be added to an R Script to be run.
-
-When the code is run in RStudio the console prints out results like so:
-
-    [1] Result
-
-In this tutorial results from code will appear like so:
-
-    ## [1] Result
 
 ## Working in the Console
 
@@ -253,6 +242,23 @@ information see:
 <https://cran.r-project.org/doc/manuals/r-release/R-lang.html#Objects>
 :::
 
+### Try it Yourself!
+
+::: {.callout-tip title="CHALLENGE"}
+
+1. Create an object with the value of your name
+1. Create an object with the value of your age.
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+The exact answer will vary based on your information, but it should look something like:
+
+1. my_name <- "Jane"
+1. my_age <- 30
+
+::::
+
+:::
+
 ### Working with Objects
 
 That last example was kind of abstract. So let's look at a more
@@ -266,11 +272,11 @@ First we can save the population number to an object. We will call it
     <https://www.census.gov/quickfacts/MD>
 
 ```{r}
-md_pop <- 6165129
+md_pop <- 620000
 ```
 
-What percentage of the Maryland population is over 18? According to the
-Census Bureau [^rbasics-2], 78% of the Maryland population is over 18.
+What percentage of the Maryland population are adults? According to the
+Census Bureau [^rbasics-2], 78% of the Maryland population is 18 and over.
 We can use that to calculate the number of adults in Maryland.
 
 [^rbasics-2]: Population data from
@@ -281,31 +287,27 @@ md_adult_pop <- .78 * md_pop
 ```
 
 Next, we want to know what percentage of people in Maryland have been
-fully vaccinated for COVID-19. As of early July 2022 4.68 million people
-of all ages have been vaccinated in Maryland [^rbasics-3]. So let's
-create another object:
+fully vaccinated for COVID-19. As of early July 2022, when this lesson was first written, 4.68 million people of all ages had been fully vaccinated in Maryland [^rbasics-3]. So let's create another object:
 
 [^rbasics-3]: Vaccination information from
-    <https://coronavirus.maryland.gov/#Vaccine>
+    <https://data.cdc.gov/Vaccinations/COVID-19-Vaccinations-in-the-United-States-County/8xkx-amqh>
 
 ```{r}
-md_vax_pop <- 4682799
+md_vax_pop <- 4680000
 ```
 
-Now we can calculate the percentage of the Maryland population that is
-vaccinated.
+Now we can calculate the percentage of the Maryland population that was
+vaccinated at that time.
 
 ```{r}
 percent_vax <- (md_vax_pop / md_pop) * 100
 percent_vax
 ```
 
-As more people get vaccinated this can be updated. Let's say later in
-year we have 4.9 million Marylanders who are fully vaccinated. We can
-re-assign the value of `md_vax_pop`
+The information in a variable can be updated as necessary. As of May 2023, when the CDC stopped extensively tracking COVID-19 vaccination information, 4.83 million people of all ages had been vaccinated in Maryland. We can re-assign the value of `md_vax_pop`
 
 ```{r}
-md_vax_pop <- 4900000
+md_vax_pop <- 4830000
 ```
 
 Then recalculate `percent_vax`
@@ -315,8 +317,8 @@ percent_vax <- (md_vax_pop / md_pop) * 100
 percent_vax
 ```
 
-::: {.shaded .tip data-latex=""}
-**Tip**<br> You will make lots of assignments and `<-` is a pain to
+::: {.callout-tip title="Tip"}
+You will make lots of assignments and `<-` is a pain to
 type. Avoid the temptation to use `=`: it will work, but it will cause
 confusion later. Instead, use RStudio's keyboard shortcut:
 <kbd>`Alt + -`</kbd> (the minus sign).
@@ -324,7 +326,9 @@ confusion later. Instead, use RStudio's keyboard shortcut:
 Notice that RStudio automagically surrounds `<-` with spaces, which is a
 good code formatting practice. Code is miserable to read on a good day,
 so giveyoureyesabreak and use spaces.
+
 :::
+
 
 ### Naming Objects
 
@@ -346,20 +350,25 @@ lowercase.
 
 ```
 
-### Challenge
+### Try it Yourself!
 
-::: {.shaded .question data-latex=""}
-**Question** <br> Earlier you created an object called `md_adult_pop`
-which used Census data to calculate the number of adults living in
-Maryland. According to the CDC^[Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: US Department of Health and Human Services, CDC; 2022, July 06. https://covid.cdc.gov/covid-data-tracker], 4040544 adults in Maryland have been
-fully vaccinated against COVID-19.
+::: {.callout-tip title="CHALLENGE"}
 
-1. Assign the number of fully
-vaccinated adults in Maryland to a new object. 
-2. Use the new object
-together with `md_adult_pop` to calculate the percentage of adults in
-Maryland who are fully vaccinated. Save this to an object called
+Earlier you created an object called `md_adult_pop` which used Census data to calculate the number of adults living in
+Maryland. According to the CDC^[Centers for Disease Control and Prevention. COVID Data Tracker. Atlanta, GA: US Department of Health and Human Services, CDC; 2022, July 06. https://covid.cdc.gov/covid-data-tracker], 4.17 million adults in Maryland had been
+fully vaccinated against COVID-19 as of May 2023.
+
+1. Assign the number of fully vaccinated adults in Maryland to a new object. 
+1. Use the new object together with `md_adult_pop` to calculate the percentage of adults in Maryland who are fully vaccinated. Save this to an object called
 `md_adult_percent_vax`.
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. `md_adult_vax_pop <- 4170000`
+2. `md_adult_percent_vax <- (md_adult_vax_pop / md_adult_pop) * 100
+
+::::
+
 :::
 
 ## Saving code in an R script
@@ -374,7 +383,7 @@ You can save all the steps of your analysis to a *script*. This is
 especially powerful if you have long and complicated analyses. It is how
 R contributes to reproducible and open science.
 
-If working in the RStudio Cloud project, open the file vax_count.R (or [download the file](https://osf.io/download/kz57p/) if working locally). Here we have recorded the steps we just took.
+Open the file `vax_count.R`. Here we have recorded the steps we just took.
 So let's say you were training a new employee to run this very important
 analysis. Now all they have to do is input the new vaccination number,
 and run the script.
@@ -385,52 +394,50 @@ script can be sent to the console by selecting it or placing the cursor
 on the correct line, and then pressing **Control-Enter**
 (**Command-Enter** on a Mac).
 
-::: {.shaded .tip data-latex=""}
-**Tip**<br> Add comments to code, using lines starting with the `#`
+::: {.callout-tip}
+
+Add comments to code, using lines starting with the `#`
 character. This makes it easier for others to follow what the code is
 doing (and also for us the next time we come back to it).
+
 :::
 
 ## Setting your Working Directory
 
-The working directory is the location within which R points to the files
-system. RStudio sets up a default working directory, typically the home
-directory of the computer, which can be changed in the global options
-setting in RStudio.
+The working directory is the directory ( or folder) which you are currently in, and from which any code you run will be executed. It's important to know what directory you are working in, so your code runs predictably. For example, when working with data, you need to know how to tell the computer where that data file is located and where to save any output files. You'll provide those locations in relationship to the working directory. 
 
-In the code samples provided the data files are located in the R working
-directory, which can be found with the function `getwd`.
+We can find out our current working directory with the function `getwd()`
 
-    getwd() # get current working directory
+```{r}
+getwd()
+```
+
 
 You can select a different working directory with the function
-`setwd()`, and thus avoid entering the full path of the data files.
+`setwd()`. Let's set our working directory to the `Session01` folder.
 
-    setwd("<new path>")   # set working directory
+```{r eval=FALSE}
+setwd("~/Desktop/Session01_RBasics") #This path may vary based on exact computer set up.
+```
 
-Note that the forward slash should be used as the path separator even on
-Windows platform.
 
-    setwd("C:/MyDoc")
-
-Alternatively you can go to the working directory and set the working
-directory using the files panel and clicking the gear wheel for "more"
-within RStudio.
+Alternatively you can navigate to the desired working directory using the `Files` pane and set the working directory from there. Click  the gear wheel for "More"
+within the RStudio file pane.
 
 ```{r echo=F}
 knitr::include_graphics("images/workingDir01.png")
 ```
 
-Or by selecting the drop down list found in Tools(Windows) or
-Session(Mac) in the menu at the top of the RStudio window.
+Or by selecting the drop down list found in the Session menu at the top of the RStudio window.
 
 ```{r echo=F}
 knitr::include_graphics("images/workingDir02.png")
 ```
 
+
 ## Functions and their arguments
 
-Functions are "canned scripts" that automate more complicated sets of
+`getwd()` and `setwd()` are examples of functions. Functions are "canned scripts" that automate more complicated sets of
 commands including operations assignments, etc. Many functions are
 predefined, or can be made available by importing R *packages* (more on
 that later). A function usually gets one or more inputs called
@@ -451,11 +458,11 @@ function rounds the number, and returns the value which is then assigned
 to the object `b`.
 
 The return 'value' of a function need not be numerical (like that of
-`sqrt()`), and it also does not need to be a single item: it can be a
+`round()`), and it also does not need to be a single item: it can be a
 set of things, or even a dataset. We'll see that when we read data files
 into R.
 
-Arguments can be anything, not only numbers or filenames, but also other
+Arguments can be anything, not only numbers or file names, but also other
 objects. Exactly what each argument means differs per function, and must
 be looked up in the documentation (see below). Some functions take
 arguments which may either be specified by the user, or, if left out,
@@ -472,7 +479,7 @@ numerical value.
 round(percent_vax)
 ```
 
-Here, we've called `round()` on our percent_vax object and it returned
+Here, we've called `round()` on our `percent_vax` object and it returned
 `r round(percent_vax)`. That's because the default action of the
 function is to round to the nearest whole number. If we want more digits
 we can see how to do that by getting information about the `round`
@@ -509,6 +516,7 @@ of all optional arguments. If you don't, someone reading your code might
 have to look up the definition of a function with unfamiliar arguments
 to understand what you're doing.
 
+
 ### Getting Help
 
 In the previous example we looked up the arguments to `round()` using
@@ -532,14 +540,22 @@ packages. To do so type as follows
     ?{function}
     ?"{package name}"
 
-### Challenge: using functions
+### Try it Yourself!
 
-::: {.shaded .question data-latex=""}
-**Questions** <br>
+::: {.callout-tip title="CHALLENGE"}
 
-Look at the documentation for the `seq` function. What does `seq` do?
-Give an example of using `seq` with either the `by` or `length.out`
-argument.
+1. Create a new R script called `Exercises.R`. Save it to the Session01 folder (which should be your working directory). Use this file to answer any future challenge questions.
+1. Use one of the strategies you learned in the `Getting Help` section to look at the documentation for the `seq` function. Use this documentation to figure out how to cgenerate the following sequence: `0 10 20 30 40 50 60 70 80 90 100`
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+1. Go to `File > New File > R Script` at the top menu OR 
+    `CTRL + SHIFT + N` on the keyboard OR
+    Select the icon with a green plus sign on a white rectangle in the ribbon OR
+    From the Files pane go to `New File > R Script`
+1. `seq(from = 0, to = 100, by = 10)` OR `seq(from = 0, to = 100, length.out = 11)`
+   
+::::
+
 :::
 
 ## Packages
