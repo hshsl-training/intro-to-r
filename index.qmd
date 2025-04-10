@@ -19,31 +19,31 @@ css: styles.scss
 This session will provide a solid foundation in working with R and RStudio and lay the groundwork to enable participants to explore more advanced topics in R programming. 
 Topics covered include:
 
-•	Navigating the RStudio interface, installing packages, getting help
-•	Naming and working with objects
-•	Using functions
-•	Identifying R data types and structures
-•	Working with scripts
+- Navigating the RStudio interface, installing packages, getting help
+- Naming and working with objects
+- Using functions
+- Identifying R data types and structures
+- Working with scripts
  
 **Session 2: Data Wrangling with R - Introduction to the Tidyverse**
 This session will introduce the concept of “tidy” data, and the versatile collection of packages known as the Tidyverse. Participants will get hands-on experience wrangling real datasets.
 Topics covered include:
 
-•	Importing data from external files
-•	Subsetting and filtering data
-•	Split-Apply-Combine analysis workflow
-•	Creating variables
-•	Joining data tables
+-	Importing data from external files
+-	Subsetting and filtering data
+-	Split-Apply-Combine analysis workflow
+-	Creating variables
+-	Joining data tables
  
 **Session 3: Data Visualization in R with ggplot2**
 Learn how to use ggplot2, a robust Tidyverse package used to create high quality graphics for exploring and communicating your data. We will go beyond basic graphs and learn how to customize and annotate our graphs for more effective storytelling. 
 Topics covered include:
 
-•	Visualization best practices 
-•	Grammar of graphics - ggplot2 layers, aesthetics, and geoms
-•	Choosing an effective graph type for your data
-•	Customizing labels, axes, legends, and more
-•	Choosing a color palette and themes
+-	Visualization best practices 
+-	Grammar of graphics - ggplot2 layers, aesthetics, and geoms
+-	Choosing an effective graph type for your data
+-	Customizing labels, axes, legends, and more
+-	Choosing a color palette and themes
 
 
 

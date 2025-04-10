@@ -1,19 +1,15 @@
 ---
+title: "Introduction to R and RStudio"
+format: html
+toc: true
 editor_options: 
   markdown: 
     wrap: 72
 ---
 
-# Introduction to R and RStudio
-
 ```{r, include = FALSE}
 knitr::opts_chunk$set(fig.width=6, fig.height=3.5, fig.align="center")
 ```
-
-The next two chapters will provide you with a hands on opportunity to
-learn R and RStudio. While R is a big topic and we will not be able to
-cover everything, by the end of this session we hope that you will feel
-comfortable starting to use R on your own.
 
 ## Learning Objectives
 
@@ -272,7 +268,7 @@ First we can save the population number to an object. We will call it
     <https://www.census.gov/quickfacts/MD>
 
 ```{r}
-md_pop <- 620000
+md_pop <- 6200000
 ```
 
 What percentage of the Maryland population are adults? According to the
@@ -558,49 +554,11 @@ packages. To do so type as follows
 
 :::
 
-## Packages
-
-While you can write your own functions, most functions you use will be
-part of a package. In R, the fundamental unit of shareable code is the
-package. A package bundles together code, data, documentation, and
-tests, and is easy to share with others. As of July 2018, there were
-over 14,000 packages available on the Comprehensive R Archive Network,
-or CRAN, the public clearing house for R packages. This huge variety of
-packages is one of the reasons that R is so successful.
-
-Installing a package using RStudio requires selecting the Install
-Packages Button in the Files, Plots, Packages Pane
-
-```{r echo=F, out.width="75%"}
-knitr::include_graphics("images/installPackages.png")
-```
-
-In the pop up box that results simply type the name of the package and
-check "install dependencies" and click Install
-
-```{r echo=F,out.width="100%"}
-knitr::include_graphics("images/packagesDialog.png")
-```
-
-Its also possible for you to install and load packages from the console.
-Always make sure to put the package name in quotes when installing and
-setting `dependencies = True`
-
-```{r eval=FALSE}
-install.packages("tidyverse", dependencies = TRUE)    
-library(tidyverse)
-
-```
-
-You only need to install a package once, but you need to reload it every
-time you start a new session.
 
 ## Vectors
 
 ### What is a Vector?
-**"Vector"** means different things in
-different fields (mathematics, geometry, biology), but in R it is a
-fancy name for a collection of values. We call the individual values
+**"Vector"** means different things in different fields (mathematics, geometry, biology), but in R it is a fancy name for a collection of values. We call the individual values
 *elements* of the vector. It is one of the most common data structures
 you will work with in R.
 
@@ -611,8 +569,7 @@ number can also be done with a vector. For example arithmetic can be
 done on vectors as it can be on single numbers.
 
 ### Working with Vectors
-Let's say that we have a group of patients in our clinic. (See info in patients_list.txt in  your project folder, or [download the file](https://osf.io/download/j2gv7/).) We can store
-their names in a vector.
+Let's say that we have a group of patients in our clinic. (See info in patients_list.txt in the Session01 folder.) We can store their names in a vector.
 
 ```{r create-vector}
     patients <- c("Maria", "Jon", "Ali", "Luis", "Mei" )
@@ -684,12 +641,14 @@ patients + "Sue"
 Remember we used `c()` to
 add a value to our character vector.
 
-::: {.shaded .important data-latex=""}
-**Data Types** <br> There are numerous data types. Some of the other
+::: ::: {.callout-important title="Data Types"}
+
+There are numerous data types. Some of the other
 most common data types you will encounter are numeric data, character
 data and logical data. Vectors of one data type only are called **atomic
 vectors**. Read more about vectors and data types in the book [R for
 Data Science](https://r4ds.had.co.nz/vectors.html)
+
 :::
 
 Now let's try working with some logical data. Logical data is the
@@ -763,24 +722,33 @@ what happens if we mix multiple data types in one vector?
 Sometimes the best way to understand R is to try some examples and see
 what it does.
 
-::: {.shaded .question data-latex=""}
-**Questions**<br>
-What will happen in each of these examples? Try running this code to see! 
+### Try it Yourself!
+
+::: {.callout-tip title="CHALLENGE"}
+
+What will happen in each of these examples? Pay attention to the resulting data type of each vector. Try running this code to see! 
 
 1. `patient <- c("Maria", 122, TRUE)`
 2. `name_weight <- c("John", 320, 145)`
 3. `weight_status <- c(217, 99, FALSE)`
 
 Why do you think this happens?
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. All elements in the vector are turned to character data.
+1. All elements in the vector are turned to character data
+1. All elements in the vector are turned to numeric data.
+
+This process is called *coercion*. Because vectors can only contain one type of data, R chooses a lowest common denominator type of vector, a type that can contain everything we
+are trying to put in it. A different language might stop with an error, but R tries to soldier on as best it can. A number can be represented as a character string, but a character string can not be represented as a number, so when we try to put both in the same vector R converts everything to a character string.
+In the third example, we see that `FALSE` can be represented as numeric 0 (and `TRUE1, likewise can be represented as a 1).
+
+::::
+
 :::
 
-Because vectors can only contain one type of data, R chooses a lowest
-common denominator type of vector, a type that can contain everything we
-are trying to put in it. A different language might stop with an error,
-but R tries to soldier on as best it can. A number can be represented as
-a character string, but a character string can not be represented as a
-number, so when we try to put both in the same vector R converts
-everything to a character string.
+
 
 ### Indexing and Subsetting vectors
 
@@ -903,7 +871,7 @@ patient_data
 variants <- readr::read_csv("https://osf.io/download/a325n/")
 ```
 
-Now we will look at ways to explore the contents of a data frame. For this part of the lesson we will use an object `variants`, a data frame, that has been pre-loaded in your RStudio Cloud project as a `.rds` object, this is a binary Rdata file. To access this object locate `/cloud/project/data/variants.rds` in the file viewer and click on it. In the dialog box that pops up select "OK" In the next session you will learn how to load data in to R but for now we have done this for you so you can focus on learning about exploring data frames. 
+Now we will look at ways to explore the contents of a data frame. For this part of the lesson we will use an object `variants`, a data frame, which is the `.rds` file in the data subfolder of your Session01 folder. To access this object locate `variants.rds` in the file viewer and click on it. In the dialog box that pops up select "OK" In the next session you will learn how to load data in to R but for now we have done this for you so you can focus on learning about exploring data frames. 
 
 The `variants` object is a dataset that comes from a real world experiment in E. Coli, you can find out more about the study in the [Tenaillon et al 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4988878/) paper ^[Tenaillon O, Barrick JE, Ribeck N, Deatherage DE, Blanchard JL, Dasgupta A, Wu GC, Wielgoss S, Cruveiller S, Médigue C, Schneider D, Lenski RE. Tempo and mode of genome evolution in a 50,000-generation experiment (2016) Nature. 536(7615): 165–170. Paper, Supplemental materials Data on NCBI SRA: https://trace.ncbi.nlm.nih.gov/Traces/sra/?study=SRP064605 Data on EMBL-EBI ENA: https://www.ebi.ac.uk/ena/data/view/PRJNA295606]. The `variants` object is tabular version of a specialized genomics file type called a VCF file. VCF files are the output of a bioinformatics pipeline that starts with FASTQ files that come from a sequencer and ends with a VCF File. This pipeline typically happens outside of R and RStudio.
 
@@ -963,12 +931,15 @@ variants[4,]
 variants[, "REF"]
 ```
 
-You can use a vector to retrieve specific rows or columns you may want. This vector can be a named object or created on the spot and passed as an argument in the subsetting.
+
 
 ```{r}
 # subset a range of rows using `colon :`
 variants[35:45, ]
 ```
+
+
+You can use a vector to retrieve specific rows or columns you may want. This vector can be a named object or created on the spot and passed as an argument in the subsetting.
 
 ```{r}
 columns_desired <- c(1:3,6:7, 9)
@@ -976,6 +947,7 @@ variants[, columns_desired] # same as variants[,c(1:3,6:7, 9)]
 ```
 
 You might be interested in working with a new object that is just your subset from the main data frame. You can do this!
+
 ```{r}
 # put the first three columns, column 6, column 7 and column 9 of variants into a new data frame called subset_variants
 
