@@ -326,7 +326,7 @@ so giveyoureyesabreak and use spaces.
 :::
 
 
-### Naming Objects
+::: {.callout-note title="Naming Objects"}
 
 The name for objects must start with a letter, and can only contain
 letters, numbers, underscores (`_`)and periods (`.`). The name of the
@@ -345,6 +345,7 @@ lowercase.
     Others_pRefer.to_RENOUNCEconvention #avoid
 
 ```
+:::
 
 ### Try it Yourself!
 
@@ -683,6 +684,27 @@ class(weight_lb)
 class(vax_status)
 ```
 
+### Try it Yourself!
+
+::: {.callout-tip title="CHALLENGE"}
+
+1. Create a vector of the following names: Marcia, Jan, Cindy. Assign this to an object called `brady_girls`. 
+1. Create another vector of the following names: Greg, Peter, Bobby. Assign this to an object called `brady_boys`.
+1. Combine the `brady_girls` and `brady_boys` vectors together and assign to an object called `brady_bunch`.
+1. Add the names Carol, Mike, and Alice to the `brady_bunch` vector
+
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. `brady_girls <- c("Marcia", "Jan", "Cindy")`
+1. `brady_boys <- c("Greg", "Peter", "Bobby")`
+1. `brady_bunch <- c(brady_girls, brady_boys)`
+1. `brady_bunch <- c(brady_bunch, "Mike", "Carol", "Alice")`
+
+::::
+
+:::
+
 ### Missing Data
 
 R also has many tools to help with missing data, a very common
@@ -708,6 +730,21 @@ to remove the NA values before attempting to perform the calculation.
 ```{r}
 mean(missing_wgt, na.rm = TRUE)
 ```
+
+You can use the logical operator `is.na()` and it's opposite `!is.na()` to check for NA values in your dataset. `is.na()` returns a logical vector of the same length as the original with a TRUE for every missing value and a FALSE for every value that is not missing,
+
+```{r}
+is.na(missing_wgt)
+
+!is.na(missing_wgt)
+```
+
+We can use the `sum()` function with `is.na()` to count up the number of missing values in our vector. This works because the computer understands TRUE as 1 and FALSE as 0.
+
+```{r}
+sum(is.na(missing_wgt))
+```
+
 
 For more on how to work with missing data, check out this [Data
 Carpentry
@@ -749,7 +786,6 @@ In the third example, we see that `FALSE` can be represented as numeric 0 (and `
 :::
 
 
-
 ### Indexing and Subsetting vectors
 
 Access elements of a vector with `[ ]`, for example
@@ -761,6 +797,13 @@ Access elements of a vector with `[ ]`, for example
 ```{r}
     patients[4]
 ```
+
+You can use a colon `:` to access consecutive elements of a vector.
+
+```{r}
+patients[2:4]
+```
+
 
 You can also assign to a specific element of a vector. We realize that
 we misspelled the name of our patient John, so we can overwrite our old
@@ -829,6 +872,24 @@ are_vaccinated <- vax_status == TRUE & !is.na(vax_status)
 # subset the vector according to the logical expression via using the object.
 patients[are_vaccinated]
 ```
+
+
+### Try it Yourself!
+
+::: {.callout-tip title="CHALLENGE"}
+
+1. Use bracket notation to access the 4th element of the `brady_bunch` vector you created earlier. 
+1. Use bracket notation to access the 7th through 9th elements of hte `brady_bunch` vector.
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. `brady_bunch[4]`
+1. `brady_bunch[7:9]` OR `brady_bunch[c(7,8,9)]`
+
+::::
+
+:::
+
 
 ## Data frames, Tibbles, and Exploring Data
 
@@ -1011,6 +1072,40 @@ subset_variants_low_qual <- subset_variants[low_qual_idX, ]
 head(subset_variants_low_qual)
 ```
 
+
+### Try it Yourself!
+
+::: {.callout-tip title="CHALLENGE"}
+
+For this exercise we will use a built-in R dataset called `ToothGrowth`. You can read more about built-in datasets by calling the code `library(help="datasets")`
+
+1. Use `head()` to look at the beginning of the dataset called `ToothGrowth`.
+1. How would you find the number of columns and rows in `ToothGrowth`? 
+1. How would you find summary information about this dataset?
+1. Use bracket notation to select the item in the 5th row and 2nd column of `ToothGrowth`.
+1. Use bracket notation to select the 5th through 10th rows of `ToothGrowth`.
+1. Use dollar sign notation to look at the `len` column of `ToothGrowth`. 
+1. Find the mean of the `len` column.
+1. Use logical subsetting to save all the rows where the value in the `supp` column is `OJ`. Assign this to a new object.
+
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. `head(ToothGrowth)`
+1. `ncol(ToothGrowth)` and `nrow(ToothGrowth)` OR `dim(ToothGrowth)` The data frame has 60 rows and 3 columns.
+1. `summary(ToothGrowth)`
+1. `ToothGrowth[5,2]` . Should return `VC`
+1. `ToothGrowth[5:10, ]`
+1. `ToothGrowth$len`
+1. `mean(ToothGrowth$len)`
+1. `just_oj <- ToothGrowth[ToothGrowth$supp == "OJ", ]`
+
+
+::::
+
+:::
+
+
 **Introducing Factors**
 Factors are the final major data type we will introduce in this R lessons. Factors can be thought of as vectors which are specialized for categorical data. Given R’s specialization for statistics, this make sense since categorical and continuous variables are usually treated differently. Sometimes you may want to have data treated as a factor, but in other cases, this may be undesirable.
 
@@ -1080,27 +1175,8 @@ hist(variants$QUAL, breaks = 20)
 ```
 
 
-We have only covered 2 of the plots you can use to explore a dataset using Base R, we like these because they allow for quick checks of variables in the data. If you want to do anything beyond very simple plots, though, it’s generally better to switch to ggplot2 which you will learn in Session 3 of the CDABS summeR workshops!
+We have only covered 2 of the plots you can use to explore a dataset using Base R, we like these because they allow for quick checks of variables in the data. If you want to do anything beyond very simple plots, though, it’s generally better to switch to ggplot2 which you will learn in Session 3 of this series.
 
-At this point you can review the material or continue to some exercises we have put together for you. Congratulations you made it to the end!
 
-## Exercises
 
-1. Open a new R script. Save it to your project folder. Use this script to record the answers to the exercises
-2. Use a comment to indicate the exercise number you are answering.
-3. Create an object with the value of your name.
-4. Create an object with the value of your age. 
-5. Determine the data type of each of the two objects you created above with the `class()` function.
-6. Use one of the strategies you learned in [Getting Help] to look up what the `rm()` function does. How would you use this on the objects you created in Questions 3 and 4?
-7. Create a vector of the following names: Marcia, Jan, Cindy. Assign this to an object called `brady_girls`. 
-8. Create another vector of the following names: Greg, Peter, Bobby. Assign this to an object called `brady_boys`.
-9. Combine the `brady_girls` and `brady_boys` vectors together and assign to an object called `brady_bunch`.
-10. How would you subset the 4th element in the `brady_bunch` vector?
-11. Call `library(help = "datasets")` to explore the various datasets contained in the `datasets` package. This package contains a number of example datasets you can use for practice. 
-12. Use `head()` to look at the beginning of the dataset called `ToothGrowth`.
-13. How would you find the number of columns and rows in `ToothGrowth`? How would you find summary information about this dataset?
-14. Use bracket notation to select the item in the 5th row and 2nd column of `ToothGrowth`.
-15. Use bracket notation to select the 5th through 10th rows of `ToothGrowth`.
-16. Use dollar sign notation to look at the `len` column of `ToothGrowth`. 
-17. Find the mean of the `len` column.
-18. Use logical subsetting to save all the rows where the value in the `supp` column is `OJ`. Assign this to a new object.
+
