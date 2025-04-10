@@ -166,7 +166,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#creating-objects" id="toc-creating-objects" class="nav-link" data-scroll-target="#creating-objects">Creating Objects</a></li>
   <li><a href="#try-it-yourself" id="toc-try-it-yourself" class="nav-link" data-scroll-target="#try-it-yourself">Try it Yourself!</a></li>
   <li><a href="#working-with-objects" id="toc-working-with-objects" class="nav-link" data-scroll-target="#working-with-objects">Working with Objects</a></li>
-  <li><a href="#naming-objects" id="toc-naming-objects" class="nav-link" data-scroll-target="#naming-objects">Naming Objects</a></li>
   <li><a href="#try-it-yourself-1" id="toc-try-it-yourself-1" class="nav-link" data-scroll-target="#try-it-yourself-1">Try it Yourself!</a></li>
   </ul></li>
   <li><a href="#saving-code-in-an-r-script" id="toc-saving-code-in-an-r-script" class="nav-link" data-scroll-target="#saving-code-in-an-r-script">Saving code in an R script</a></li>
@@ -180,18 +179,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#what-is-a-vector" id="toc-what-is-a-vector" class="nav-link" data-scroll-target="#what-is-a-vector">What is a Vector?</a></li>
   <li><a href="#working-with-vectors" id="toc-working-with-vectors" class="nav-link" data-scroll-target="#working-with-vectors">Working with Vectors</a></li>
+  <li><a href="#try-it-yourself-3" id="toc-try-it-yourself-3" class="nav-link" data-scroll-target="#try-it-yourself-3">Try it Yourself!</a></li>
   <li><a href="#missing-data" id="toc-missing-data" class="nav-link" data-scroll-target="#missing-data">Missing Data</a></li>
   <li><a href="#mixing-data-types" id="toc-mixing-data-types" class="nav-link" data-scroll-target="#mixing-data-types">Mixing Data Types</a></li>
-  <li><a href="#try-it-yourself-3" id="toc-try-it-yourself-3" class="nav-link" data-scroll-target="#try-it-yourself-3">Try it Yourself!</a></li>
+  <li><a href="#try-it-yourself-4" id="toc-try-it-yourself-4" class="nav-link" data-scroll-target="#try-it-yourself-4">Try it Yourself!</a></li>
   <li><a href="#indexing-and-subsetting-vectors" id="toc-indexing-and-subsetting-vectors" class="nav-link" data-scroll-target="#indexing-and-subsetting-vectors">Indexing and Subsetting vectors</a></li>
+  <li><a href="#try-it-yourself-5" id="toc-try-it-yourself-5" class="nav-link" data-scroll-target="#try-it-yourself-5">Try it Yourself!</a></li>
   </ul></li>
   <li><a href="#data-frames-tibbles-and-exploring-data" id="toc-data-frames-tibbles-and-exploring-data" class="nav-link" data-scroll-target="#data-frames-tibbles-and-exploring-data">Data frames, Tibbles, and Exploring Data</a>
   <ul class="collapse">
   <li><a href="#creating-data-frames" id="toc-creating-data-frames" class="nav-link" data-scroll-target="#creating-data-frames">Creating data frames</a></li>
   <li><a href="#exploring-data-frames" id="toc-exploring-data-frames" class="nav-link" data-scroll-target="#exploring-data-frames">Exploring data frames</a></li>
+  <li><a href="#try-it-yourself-6" id="toc-try-it-yourself-6" class="nav-link" data-scroll-target="#try-it-yourself-6">Try it Yourself!</a></li>
   <li><a href="#quickly-exploring-data-with-plots" id="toc-quickly-exploring-data-with-plots" class="nav-link" data-scroll-target="#quickly-exploring-data-with-plots">Quickly exploring data with plots</a></li>
   </ul></li>
-  <li><a href="#exercises" id="toc-exercises" class="nav-link" data-scroll-target="#exercises">Exercises</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://hshsl-training.github.io/intro-to-r/edit/main/01-RBasics.Rmd" class="toc-action"><i class="bi bi-git"></i>Edit this page</a></li><li><a href="https://hshsl-training.github.io/intro-to-r/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -528,15 +529,24 @@ Tip
 <p>Notice that RStudio automagically surrounds <code>&lt;-</code> with spaces, which is a good code formatting practice. Code is miserable to read on a good day, so giveyoureyesabreak and use spaces.</p>
 </div>
 </div>
-</section>
-<section id="naming-objects" class="level3">
-<h3 class="anchored" data-anchor-id="naming-objects">Naming Objects</h3>
+<div class="callout callout-style-default callout-note callout-titled" title="Naming Objects">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Naming Objects
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>The name for objects must start with a letter, and can only contain letters, numbers, underscores (<code>_</code>)and periods (<code>.</code>). The name of the object should describe what is being assigned so they typically will be multiple words. One convention used is <strong>snake_case</strong> where lowercase words are separated with <code>_</code>. Another popular style is <strong>camelCase</strong> where compound words or phrases are written so that each word or abbreviation in the middle of the phrase begins with a capital letter, with no intervening spaces or punctuation and the first letter is lowercase.</p>
 <pre><code>    thisIsCamelCase
     some_use_snake_case
     others.use.periods                  #avoid
     Others_pRefer.to_RENOUNCEconvention #avoid
 </code></pre>
+</div>
+</div>
 </section>
 <section id="try-it-yourself-1" class="level3">
 <h3 class="anchored" data-anchor-id="try-it-yourself-1">Try it Yourself!</h3>
@@ -556,7 +566,7 @@ CHALLENGE
 <li>Use the new object together with <code>md_adult_pop</code> to calculate the percentage of adults in Maryland who are fully vaccinated. Save this to an object called <code>md_adult_percent_vax</code>.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -565,7 +575,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>md_adult_vax_pop &lt;- 4170000</code></li>
@@ -716,7 +726,7 @@ CHALLENGE
 <li>Use one of the strategies you learned in the <code>Getting Help</code> section to look at the documentation for the <code>seq</code> function. Use this documentation to figure out how to cgenerate the following sequence: <code>0 10 20 30 40 50 60 70 80 90 100</code></li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -725,7 +735,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>Go to <code>File &gt; New File &gt; R Script</code> at the top menu OR <code>CTRL + SHIFT + N</code> on the keyboard OR Select the icon with a green plus sign on a white rectangle in the ribbon OR From the Files pane go to <code>New File &gt; R Script</code></li>
@@ -857,6 +867,48 @@ Solution
 </div>
 </div>
 </section>
+<section id="try-it-yourself-3" class="level3">
+<h3 class="anchored" data-anchor-id="try-it-yourself-3">Try it Yourself!</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="CHALLENGE">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CHALLENGE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Create a vector of the following names: Marcia, Jan, Cindy. Assign this to an object called <code>brady_girls</code>.</li>
+<li>Create another vector of the following names: Greg, Peter, Bobby. Assign this to an object called <code>brady_boys</code>.</li>
+<li>Combine the <code>brady_girls</code> and <code>brady_boys</code> vectors together and assign to an object called <code>brady_bunch</code>.</li>
+<li>Add the names Carol, Mike, and Alice to the <code>brady_bunch</code> vector</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><code>brady_girls &lt;- c("Marcia", "Jan", "Cindy")</code></li>
+<li><code>brady_boys &lt;- c("Greg", "Peter", "Bobby")</code></li>
+<li><code>brady_bunch &lt;- c(brady_girls, brady_boys)</code></li>
+<li><code>brady_bunch &lt;- c(brady_bunch, "Mike", "Carol", "Alice")</code></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="missing-data" class="level3">
 <h3 class="anchored" data-anchor-id="missing-data">Missing Data</h3>
 <p>R also has many tools to help with missing data, a very common occurrence.</p>
@@ -877,6 +929,24 @@ Solution
 <pre><code>[1] 191.25</code></pre>
 </div>
 </div>
+<p>You can use the logical operator <code>is.na()</code> and it’s opposite <code>!is.na()</code> to check for NA values in your dataset. <code>is.na()</code> returns a logical vector of the same length as the original with a TRUE for every missing value and a FALSE for every value that is not missing,</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="fu">is.na</span>(missing_wgt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] FALSE  TRUE FALSE  TRUE FALSE FALSE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span><span class="fu">is.na</span>(missing_wgt)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  TRUE FALSE  TRUE FALSE  TRUE  TRUE</code></pre>
+</div>
+</div>
+<p>We can use the <code>sum()</code> function with <code>is.na()</code> to count up the number of missing values in our vector. This works because the computer understands TRUE as 1 and FALSE as 0.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="fu">is.na</span>(missing_wgt))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2</code></pre>
+</div>
+</div>
 <p>For more on how to work with missing data, check out this <a href="https://datacarpentry.org/R-ecology-lesson/01-intro-to-r.html#Missing_data">Data Carpentry lesson</a></p>
 </section>
 <section id="mixing-data-types" class="level3">
@@ -884,8 +954,8 @@ Solution
 <p>We said above that vectors are supposed to have only one data type, but what happens if we mix multiple data types in one vector?</p>
 <p>Sometimes the best way to understand R is to try some examples and see what it does.</p>
 </section>
-<section id="try-it-yourself-3" class="level3">
-<h3 class="anchored" data-anchor-id="try-it-yourself-3">Try it Yourself!</h3>
+<section id="try-it-yourself-4" class="level3">
+<h3 class="anchored" data-anchor-id="try-it-yourself-4">Try it Yourself!</h3>
 <div class="callout callout-style-default callout-tip callout-titled" title="CHALLENGE">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -904,7 +974,7 @@ CHALLENGE
 </ol>
 <p>Why do you think this happens?</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -913,7 +983,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>All elements in the vector are turned to character data.</li>
@@ -931,21 +1001,28 @@ Solution
 <h3 class="anchored" data-anchor-id="indexing-and-subsetting-vectors">Indexing and Subsetting vectors</h3>
 <p>Access elements of a vector with <code>[ ]</code>, for example</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>    patients[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>    patients[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maria"</code></pre>
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>    patients[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>    patients[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Luis"</code></pre>
 </div>
 </div>
+<p>You can use a colon <code>:</code> to access consecutive elements of a vector.</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>patients[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Jon"  "Ali"  "Luis"</code></pre>
+</div>
+</div>
 <p>You can also assign to a specific element of a vector. We realize that we misspelled the name of our patient John, so we can overwrite our old value by assigning a new name to that element in our vector.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>    patients[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"John"</span></span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    patients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>    patients[<span class="dv">2</span>] <span class="ot">&lt;-</span> <span class="st">"John"</span></span>
+<span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>    patients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maria" "John"  "Ali"   "Luis"  "Mei"   "Emma" </code></pre>
 </div>
@@ -953,49 +1030,87 @@ Solution
 <p>Can we use a vector to index another vector? Yes!</p>
 <p>Lets say we want to know which of our patients have been vaccinated. We know the vaccination status because we have a vector named <code>vax_status</code> lets look at it</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>vax_status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>vax_status</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE  TRUE FALSE    NA  TRUE FALSE</code></pre>
 </div>
 </div>
 <p>Looking at the output we see the index of vaccinated people is elements <code>1, 2, and 5</code>. or where <code>vax_status</code> is <code>TRUE</code> in the output. We can use this numerical index to subset another from our vector <code>patients</code> which will give us a result that we’ll assign to a new object <code>vax_patients</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a>    vaxInd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span>
-<span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a>    patients[vaxInd] <span class="co"># this line is saying patients[c(1,2,5)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>    vaxInd <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)</span>
+<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>    patients[vaxInd] <span class="co"># this line is saying patients[c(1,2,5)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maria" "John"  "Mei"  </code></pre>
 </div>
 </div>
 <p>Now we can assign this vector to an object <code>vax_patients</code> to quickly look at our vaccinated patients.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>    vax_patients <span class="ot">&lt;-</span> patients[vaxInd]</span>
-<span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a>    vax_patients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>    vax_patients <span class="ot">&lt;-</span> patients[vaxInd]</span>
+<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a>    vax_patients</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maria" "John"  "Mei"  </code></pre>
 </div>
 </div>
 <p>That was great! The problem with this approach is that if we’re in the real world and have a patient population of 1000 it will be really hard to go through our vax_status vector and see who has <code>vax_status</code> is <code>TRUE</code>. Fortunately there is a way to deal with this! Using conditional subsetting We could equivalently have written:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>    patients[vax_status <span class="sc">==</span> <span class="cn">TRUE</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a>    patients[vax_status <span class="sc">==</span> <span class="cn">TRUE</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maria" "John"  NA      "Mei"  </code></pre>
 </div>
 </div>
 <p>This output keeps the NA’s in there and that is not helpful since we only want to know who is vaccinated. Instead we can add a second condition! This condition is awesome because we can now show off our skills of working with missing data!</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>patients[vax_status <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(vax_status)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a>patients[vax_status <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(vax_status)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maria" "John"  "Mei"  </code></pre>
 </div>
 </div>
 <p>Another thing we can do is to assign our logical expression to an object so we can index our vector using it but also index other data structures like data frames which we are about to learn about. To do this would be like this:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assign logical expression to an object</span></span>
-<span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>are_vaccinated <span class="ot">&lt;-</span> vax_status <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(vax_status)</span>
-<span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a><span class="co"># subset the vector according to the logical expression via using the object.</span></span>
-<span id="cb82-4"><a href="#cb82-4" aria-hidden="true" tabindex="-1"></a>patients[are_vaccinated]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="co"># assign logical expression to an object</span></span>
+<span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a>are_vaccinated <span class="ot">&lt;-</span> vax_status <span class="sc">==</span> <span class="cn">TRUE</span> <span class="sc">&amp;</span> <span class="sc">!</span><span class="fu">is.na</span>(vax_status)</span>
+<span id="cb90-3"><a href="#cb90-3" aria-hidden="true" tabindex="-1"></a><span class="co"># subset the vector according to the logical expression via using the object.</span></span>
+<span id="cb90-4"><a href="#cb90-4" aria-hidden="true" tabindex="-1"></a>patients[are_vaccinated]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Maria" "John"  "Mei"  </code></pre>
+</div>
+</div>
+</section>
+<section id="try-it-yourself-5" class="level3">
+<h3 class="anchored" data-anchor-id="try-it-yourself-5">Try it Yourself!</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="CHALLENGE">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CHALLENGE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Use bracket notation to access the 4th element of the <code>brady_bunch</code> vector you created earlier.</li>
+<li>Use bracket notation to access the 7th through 9th elements of hte <code>brady_bunch</code> vector.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><code>brady_bunch[4]</code></li>
+<li><code>brady_bunch[7:9]</code> OR <code>brady_bunch[c(7,8,9)]</code></li>
+</ol>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -1017,9 +1132,9 @@ Solution
 <h3 class="anchored" data-anchor-id="creating-data-frames">Creating data frames</h3>
 <p>Data frames are usually created by reading in a dataset using the <code>read.table()</code> or <code>read.csv()</code> which we will cover in our next session. However, data frames can also be created explicitly with the <code>data.frame()</code> function or they can be coerced from other types of objects like lists. Now that we know vectors form the columns of data frames, we can take the vectors we created for our patient data and combine them together in a data frame.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href="#cb84-1" aria-hidden="true" tabindex="-1"></a>patient_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(patients, weight_lb, weight_kg, vax_status)</span>
-<span id="cb84-2"><a href="#cb84-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb84-3"><a href="#cb84-3" aria-hidden="true" tabindex="-1"></a>patient_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>patient_data <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(patients, weight_lb, weight_kg, vax_status)</span>
+<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a>patient_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  patients weight_lb weight_kg vax_status
 1    Maria       122     55.45       TRUE
@@ -1037,13 +1152,13 @@ Solution
 <p>The <code>variants</code> object is a dataset that comes from a real world experiment in E. Coli, you can find out more about the study in the <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4988878/">Tenaillon et al 2016</a> paper <a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>. The <code>variants</code> object is tabular version of a specialized genomics file type called a VCF file. VCF files are the output of a bioinformatics pipeline that starts with FASTQ files that come from a sequencer and ends with a VCF File. This pipeline typically happens outside of R and RStudio.</p>
 <p>Your initial instinct with working with this object is to want to see it in a familiar spreadsheet form. The <code>View()</code> function gives us a spreadsheet-like view of the data frame.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a href="#cb86-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Using the <code>summary()</code> function and, we can learn a lot about the <code>variants</code> data frame including some summary statistics. Let’s examine what this function can tell us:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb87"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="do">## get summary statistics on a data frame</span></span>
-<span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a><span class="do">## get summary statistics on a data frame</span></span>
+<span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  sample_id            CHROM                POS             ID         
  Length:801         Length:801         Min.   :   1521   Mode:logical  
@@ -1106,11 +1221,11 @@ Solution
 <p>The original dataset had 29 variables, so we get 29 fields to look at in the <code>summary()</code> output that summarize the data for each variable. The <code>QUAL</code>, <code>IMF</code>, and <code>VDB</code> variables (and several others) are numerical data and so you get summary statistics on the min and max values for these columns, as well as mean, median, and interquartile ranges. Many of the other variables (e.g.&nbsp;<code>sample_id</code>) are treated as characters data (more on this in a bit).</p>
 <p>Running the name <code>variants</code> of the data frame in the console alone shows the first 10 rows, <code>print()</code> with the <code>n</code> argument can be used to show more than the first 10 rows on the console. Keep in mind this allows you to only see the number of variables that fit in the width of your console. So wider console window allows to see more variables.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(variants, <span class="at">n =</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(variants, <span class="at">n =</span> <span class="dv">25</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>If its the variable names you’re after you can do that with <code>names()</code> or <code>colnames()</code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(variants) <span class="co"># you could also use names()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(variants) <span class="co"># you could also use names()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "sample_id"     "CHROM"         "POS"           "ID"           
  [5] "REF"           "ALT"           "QUAL"          "FILTER"       
@@ -1124,20 +1239,20 @@ Solution
 </div>
 <p>You have access to details about the number of columns and rows also:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of rows in variants</span></span>
-<span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of rows in variants</span></span>
+<span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="fu">nrow</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 801</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of columns in variants</span></span>
-<span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="co"># number of columns in variants</span></span>
+<span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 29</code></pre>
 </div>
 </div>
 <p><strong>Subsetting data frames</strong> Similar to subsetting vectors using bracket syntax <code>[]</code>, data frames can be subset using <code>[row,column]</code>. You can provide single dimensions to <code>row</code> and <code>column</code> or variations.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">4</span>, <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">4</span>, <span class="dv">5</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   REF     
@@ -1148,7 +1263,7 @@ Solution
 <p>While the output of this subset is a single value the output is considered a data frame. This is typical of tibbles.</p>
 <p>You can use a column name (in quotes and literally the name of the variable) to subset instead of a number (numerical index):</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">4</span>, <span class="st">"REF"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">4</span>, <span class="st">"REF"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   REF     
@@ -1158,7 +1273,7 @@ Solution
 </div>
 <p>The column or row may be omitted to retrieve the entire row or column.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">4</span>,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 29
   sample_id  CHROM    POS ID    REF   ALT    QUAL FILTER INDEL   IDV   IMF    DP
@@ -1168,7 +1283,7 @@ Solution
 #   SGB &lt;dbl&gt;, MQ0F &lt;dbl&gt;, ICB &lt;lgl&gt;, HOB &lt;lgl&gt;, AC &lt;dbl&gt;, AN &lt;dbl&gt;, DP4 &lt;chr&gt;,
 #   MQ &lt;dbl&gt;, Indiv &lt;chr&gt;, gt_PL &lt;dbl&gt;, gt_GT &lt;dbl&gt;, gt_GT_alleles &lt;chr&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>variants[, <span class="st">"REF"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>variants[, <span class="st">"REF"</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 801 × 1
    REF                             
@@ -1187,8 +1302,8 @@ Solution
 </div>
 </div>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset a range of rows using `colon :`</span></span>
-<span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">35</span><span class="sc">:</span><span class="dv">45</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="co"># subset a range of rows using `colon :`</span></span>
+<span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>variants[<span class="dv">35</span><span class="sc">:</span><span class="dv">45</span>, ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 11 × 29
    sample_id CHROM    POS ID    REF   ALT    QUAL FILTER INDEL   IDV   IMF    DP
@@ -1211,8 +1326,8 @@ Solution
 </div>
 <p>You can use a vector to retrieve specific rows or columns you may want. This vector can be a named object or created on the spot and passed as an argument in the subsetting.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a>columns_desired <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">6</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">9</span>)</span>
-<span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>variants[, columns_desired] <span class="co"># same as variants[,c(1:3,6:7, 9)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>columns_desired <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">6</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">9</span>)</span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>variants[, columns_desired] <span class="co"># same as variants[,c(1:3,6:7, 9)]</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 801 × 6
    sample_id  CHROM          POS ALT                                  QUAL INDEL
@@ -1232,13 +1347,13 @@ Solution
 </div>
 <p>You might be interested in working with a new object that is just your subset from the main data frame. You can do this!</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># put the first three columns, column 6, column 7 and column 9 of variants into a new data frame called subset_variants</span></span>
-<span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a>subset_variants <span class="ot">&lt;-</span> variants[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">6</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">9</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># put the first three columns, column 6, column 7 and column 9 of variants into a new data frame called subset_variants</span></span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>subset_variants <span class="ot">&lt;-</span> variants[,<span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>,<span class="dv">6</span><span class="sc">:</span><span class="dv">7</span>, <span class="dv">9</span>)]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Lets use <code>str()</code> to explore a bit more in depth how data frames work by looking at the “structure” of <code>subset_variants</code>.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(subset_variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a href="#cb117-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(subset_variants)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>tibble [801 × 6] (S3: tbl_df/tbl/data.frame)
  $ sample_id: chr [1:801] "SRR2584863" "SRR2584863" "SRR2584863" "SRR2584863" ...
@@ -1253,29 +1368,29 @@ Solution
 <p>In the output of <code>str()</code> we see the object type <code>tibble (S3: tbl_df/tbl/data.frame)</code> is displayed in the first row along with its dimensions <code>[801 × 6]</code>, in this case 801 observations (rows) and 6 variables (columns). Each variable (column) has a name (e.g.&nbsp;<code>sample_id</code>). This is followed by the object mode (e.g.&nbsp;<code>chr</code>, <code>num</code>, etc.). Notice that before each variable name there is a <code>$</code> - lets look at this a little more since this is another way we can subset.</p>
 <p>So far we have used numbers to retrieve columns from our data frames however you might prefer using the column name. To use a name we can use <code>$</code> to retrieve columns. Occasionally it is also useful to use <code>[[ ]]</code> to retrieve columns, for example if the column name we want is stored in a variable.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a href="#cb111-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract the "ALT" column to a new object</span></span>
-<span id="cb111-2"><a href="#cb111-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb111-3"><a href="#cb111-3" aria-hidden="true" tabindex="-1"></a>alt_alleles <span class="ot">&lt;-</span> subset_variants<span class="sc">$</span>ALT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a href="#cb119-1" aria-hidden="true" tabindex="-1"></a><span class="co"># extract the "ALT" column to a new object</span></span>
+<span id="cb119-2"><a href="#cb119-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb119-3"><a href="#cb119-3" aria-hidden="true" tabindex="-1"></a>alt_alleles <span class="ot">&lt;-</span> subset_variants<span class="sc">$</span>ALT</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Lets look at the first few elements of <code>alt_alleles</code> using <code>head()</code></p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(alt_alleles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(alt_alleles)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "G"         "T"         "T"         "CTTTTTTTT" "CCGCGC"    "T"        </code></pre>
 </div>
 </div>
 <p>This could have also been written using the double bracket notation</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a>double_bracket_ALT <span class="ot">&lt;-</span> subset_variants[[<span class="st">"ALT"</span>]]</span>
-<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the first fiew rows of it</span></span>
-<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(double_bracket_ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>double_bracket_ALT <span class="ot">&lt;-</span> subset_variants[[<span class="st">"ALT"</span>]]</span>
+<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="co"># look at the first fiew rows of it</span></span>
+<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(double_bracket_ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "G"         "T"         "T"         "CTTTTTTTT" "CCGCGC"    "T"        </code></pre>
 </div>
 </div>
 <p>To get the <code>ALT</code> value for row <code>4</code> we could use a mix of <code>$</code> and bracket <code>[]</code> subsetting.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a>subset_variants<span class="sc">$</span>ALT[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a>subset_variants<span class="sc">$</span>ALT[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "CTTTTTTTT"</code></pre>
 </div>
@@ -1283,15 +1398,15 @@ Solution
 <p>(you may notice at this point were using bracket notation on a vector because the output of a <code>$</code> subsetting is a vector, data frames are made up of columns of vectors!!!)</p>
 <p><strong>Logical Subsetting(Indexing)</strong> We have already used logical indexing for subsetting a vector. Lets briefly look at an example of doing this with a data frame. Imagine that you want to have a data frame <code>subset_variants_low_qual</code> that is records from <code>subset_variants</code> that have very low quality scores.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>low_qual_idX <span class="ot">&lt;-</span> subset_variants<span class="sc">$</span>QUAL <span class="sc">&lt;</span> <span class="dv">139</span></span>
-<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a><span class="co"># take a peak at the head of this</span></span>
-<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(low_qual_idX)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a>low_qual_idX <span class="ot">&lt;-</span> subset_variants<span class="sc">$</span>QUAL <span class="sc">&lt;</span> <span class="dv">139</span></span>
+<span id="cb126-2"><a href="#cb126-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb126-3"><a href="#cb126-3" aria-hidden="true" tabindex="-1"></a><span class="co"># take a peak at the head of this</span></span>
+<span id="cb126-4"><a href="#cb126-4" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(low_qual_idX)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1]  TRUE  TRUE FALSE  TRUE FALSE FALSE</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># how many are TRUE?</span></span>
-<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(low_qual_idX)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="co"># how many are TRUE?</span></span>
+<span id="cb128-2"><a href="#cb128-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(low_qual_idX)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 200</code></pre>
 </div>
@@ -1299,9 +1414,9 @@ Solution
 <p><code>sum</code> treats <code>TRUE</code> as 1 and <code>FALSE</code> as 0, so it tells us the number of TRUE elements in the vector (<code>low_qual_idx</code>).</p>
 <p>We can use this logical vector to get the subset data frame <code>subset_variants_low_qual</code> that is only variants below the threshold we set.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>subset_variants_low_qual <span class="ot">&lt;-</span> subset_variants[low_qual_idX, ]</span>
-<span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="co"># take a look at the subset confirming with the first few values that they are below the threshold</span></span>
-<span id="cb122-3"><a href="#cb122-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(subset_variants_low_qual)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>subset_variants_low_qual <span class="ot">&lt;-</span> subset_variants[low_qual_idX, ]</span>
+<span id="cb130-2"><a href="#cb130-2" aria-hidden="true" tabindex="-1"></a><span class="co"># take a look at the subset confirming with the first few values that they are below the threshold</span></span>
+<span id="cb130-3"><a href="#cb130-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(subset_variants_low_qual)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   sample_id  CHROM          POS ALT                                   QUAL INDEL
@@ -1314,14 +1429,65 @@ Solution
 6 SRR2584863 CP000819.1 2618472 T                                     31.9 FALSE</code></pre>
 </div>
 </div>
+</section>
+<section id="try-it-yourself-6" class="level3">
+<h3 class="anchored" data-anchor-id="try-it-yourself-6">Try it Yourself!</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="CHALLENGE">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CHALLENGE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For this exercise we will use a built-in R dataset called <code>ToothGrowth</code>. You can read more about built-in datasets by calling the code <code>library(help="datasets")</code></p>
+<ol type="1">
+<li>Use <code>head()</code> to look at the beginning of the dataset called <code>ToothGrowth</code>.</li>
+<li>How would you find the number of columns and rows in <code>ToothGrowth</code>?</li>
+<li>How would you find summary information about this dataset?</li>
+<li>Use bracket notation to select the item in the 5th row and 2nd column of <code>ToothGrowth</code>.</li>
+<li>Use bracket notation to select the 5th through 10th rows of <code>ToothGrowth</code>.</li>
+<li>Use dollar sign notation to look at the <code>len</code> column of <code>ToothGrowth</code>.</li>
+<li>Find the mean of the <code>len</code> column.</li>
+<li>Use logical subsetting to save all the rows where the value in the <code>supp</code> column is <code>OJ</code>. Assign this to a new object.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><code>head(ToothGrowth)</code></li>
+<li><code>ncol(ToothGrowth)</code> and <code>nrow(ToothGrowth)</code> OR <code>dim(ToothGrowth)</code> The data frame has 60 rows and 3 columns.</li>
+<li><code>summary(ToothGrowth)</code></li>
+<li><code>ToothGrowth[5,2]</code> . Should return <code>VC</code></li>
+<li><code>ToothGrowth[5:10, ]</code></li>
+<li><code>ToothGrowth$len</code></li>
+<li><code>mean(ToothGrowth$len)</code></li>
+<li><code>just_oj &lt;- ToothGrowth[ToothGrowth$supp == "OJ", ]</code></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
 <p><strong>Introducing Factors</strong> Factors are the final major data type we will introduce in this R lessons. Factors can be thought of as vectors which are specialized for categorical data. Given R’s specialization for statistics, this make sense since categorical and continuous variables are usually treated differently. Sometimes you may want to have data treated as a factor, but in other cases, this may be undesirable.</p>
 <p>To learn about factors we will work with the column <code>subset_variants$ALT</code>. First its important to know what type of object we’re working with using <code>typeof()</code> and then look at the first <code>15</code> elements of it using <code>head()</code>:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(subset_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href="#cb132-1" aria-hidden="true" tabindex="-1"></a><span class="fu">typeof</span>(subset_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "character"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href="#cb126-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(subset_variants<span class="sc">$</span>ALT, <span class="at">n =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href="#cb134-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(subset_variants<span class="sc">$</span>ALT, <span class="at">n =</span> <span class="dv">15</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] "G"                                                       
  [2] "T"                                                       
@@ -1342,7 +1508,7 @@ Solution
 </div>
 <p>There are 801 alleles (one for each row). To simplify, lets look at just the single-nuleotide alleles (SNPs). Before doing so we can confirm that SNPs are the most abundant using <code>table()</code>, we will also sort the output decreasing</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href="#cb128-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">table</span>(subset_variants<span class="sc">$</span>ALT), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(<span class="fu">table</span>(subset_variants<span class="sc">$</span>ALT), <span class="at">decreasing =</span> <span class="cn">TRUE</span>)[<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
         A         T         G         C   GCCCCCC  GCCCCCCC  CAAAAAAA  TCCCCCCC 
@@ -1353,19 +1519,19 @@ CAAAAAAAA  TGGGGGGG
 </div>
 <p>We can create a object <code>snps_variants</code> using another logical subsetting operator <code>%in%</code> that keeps rows corresponding to a vector of values in our case the values “A”, “C”, “G”, “T”.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href="#cb130-1" aria-hidden="true" tabindex="-1"></a>snps_variants <span class="ot">&lt;-</span> subset_variants[subset_variants<span class="sc">$</span>ALT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"G"</span>, <span class="st">"T"</span>) ,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a>snps_variants <span class="ot">&lt;-</span> subset_variants[subset_variants<span class="sc">$</span>ALT <span class="sc">%in%</span> <span class="fu">c</span>(<span class="st">"A"</span>, <span class="st">"C"</span>, <span class="st">"G"</span>, <span class="st">"T"</span>) ,]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When we look at <code>str()</code> did this make our object a factor?</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb131"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb131-1"><a href="#cb131-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(snps_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(snps_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> chr [1:707] "G" "T" "T" "T" "A" "A" "C" "C" "T" "T" "A" "C" "A" "G" "C" ...</code></pre>
 </div>
 </div>
 <p>NO! The output says <code>snps_variants$ALT</code> is a <code>chr</code> and we promised you factors! To turn this or any other character vector that should be a categorical variable into a factor we can use the function <code>factor()</code> lets do this and look at its structure again.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb133"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a>snps_variants<span class="sc">$</span>ALT <span class="ot">&lt;-</span> <span class="fu">factor</span>(snps_variants<span class="sc">$</span>ALT)</span>
-<span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(snps_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb141"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href="#cb141-1" aria-hidden="true" tabindex="-1"></a>snps_variants<span class="sc">$</span>ALT <span class="ot">&lt;-</span> <span class="fu">factor</span>(snps_variants<span class="sc">$</span>ALT)</span>
+<span id="cb141-2"><a href="#cb141-2" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(snps_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> Factor w/ 4 levels "A","C","G","T": 3 4 4 4 1 1 2 2 4 4 ...</code></pre>
 </div>
@@ -1377,11 +1543,11 @@ CAAAAAAAA  TGGGGGGG
 <p>For very quick exploration of data, it’s sometimes useful to use the plotting functions in base R. These are installed by default with R and do not require any additional packages to be installed. They’re quick to type, straightforward to use in simple cases, and run very quickly.</p>
 <p>We will pick up with factors with our first example. One of the most common uses for factors will be when you plot categorical values. For example, suppose we want to know how many of our <code>snp_variants</code> had each possible SNP we could generate a plot:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href="#cb135-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(snps_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb143"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href="#cb143-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(snps_variants<span class="sc">$</span>ALT)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="01-RBasics_files/figure-html/unnamed-chunk-62-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+<p><img src="01-RBasics_files/figure-html/unnamed-chunk-65-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1389,7 +1555,7 @@ CAAAAAAAA  TGGGGGGG
 <p>This isn’t a particularly pretty example of a plot but it works!</p>
 <p>If you recall, factors are ordered alphabetically. That might make sense, but categories (e.g., “red”, “blue”, “green”) often do not have an intrinsic order. What if we wanted to order our plot according to the numerical value (i.e., in order of SNP frequency)? We can enforce an order on our factors and plot again!:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb136"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href="#cb136-1" aria-hidden="true" tabindex="-1"></a>snps_variants<span class="sc">$</span>ordered_factor_snps <span class="ot">&lt;-</span> <span class="fu">factor</span>(snps_variants<span class="sc">$</span>ALT, <span class="at">levels =</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(snps_variants<span class="sc">$</span>ALT))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb144"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb144-1"><a href="#cb144-1" aria-hidden="true" tabindex="-1"></a>snps_variants<span class="sc">$</span>ordered_factor_snps <span class="ot">&lt;-</span> <span class="fu">factor</span>(snps_variants<span class="sc">$</span>ALT, <span class="at">levels =</span> <span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(snps_variants<span class="sc">$</span>ALT))))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Let’s deconstruct this from the inside out (you can try each of these commands to see why this works):</p>
 <ol type="1">
@@ -1400,11 +1566,11 @@ CAAAAAAAA  TGGGGGGG
 </ol>
 <p>Taking a look at the plot we see it is reordered and very easy on the eyes!:</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb137"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href="#cb137-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(snps_variants<span class="sc">$</span>ordered_factor_snps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb145"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href="#cb145-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(snps_variants<span class="sc">$</span>ordered_factor_snps)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="01-RBasics_files/figure-html/unnamed-chunk-64-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+<p><img src="01-RBasics_files/figure-html/unnamed-chunk-67-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
 </figure>
 </div>
 </div>
@@ -1412,53 +1578,29 @@ CAAAAAAAA  TGGGGGGG
 <p>Wow! Adenine is the most frequent SNP in this data</p>
 <p>If you want to make a quick histogram you can pass a vector of values to <code>hist()</code>. To specify an approximate number of bins instead of the default you can add a <code>breaks</code> argument.</p>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb138"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href="#cb138-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variants<span class="sc">$</span>QUAL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb146"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb146-1"><a href="#cb146-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variants<span class="sc">$</span>QUAL)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="01-RBasics_files/figure-html/unnamed-chunk-65-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+<p><img src="01-RBasics_files/figure-html/unnamed-chunk-68-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb139"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href="#cb139-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get a clearer picture of the QUAL variable with more bins using `breaks=`</span></span>
-<span id="cb139-2"><a href="#cb139-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb139-3"><a href="#cb139-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variants<span class="sc">$</span>QUAL, <span class="at">breaks =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb147"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href="#cb147-1" aria-hidden="true" tabindex="-1"></a><span class="co"># get a clearer picture of the QUAL variable with more bins using `breaks=`</span></span>
+<span id="cb147-2"><a href="#cb147-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb147-3"><a href="#cb147-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(variants<span class="sc">$</span>QUAL, <span class="at">breaks =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="01-RBasics_files/figure-html/unnamed-chunk-65-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
+<p><img src="01-RBasics_files/figure-html/unnamed-chunk-68-2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="576"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>We have only covered 2 of the plots you can use to explore a dataset using Base R, we like these because they allow for quick checks of variables in the data. If you want to do anything beyond very simple plots, though, it’s generally better to switch to ggplot2 which you will learn in Session 3 of the CDABS summeR workshops!</p>
-<p>At this point you can review the material or continue to some exercises we have put together for you. Congratulations you made it to the end!</p>
-</section>
-</section>
-<section id="exercises" class="level2">
-<h2 class="anchored" data-anchor-id="exercises">Exercises</h2>
-<ol type="1">
-<li>Open a new R script. Save it to your project folder. Use this script to record the answers to the exercises</li>
-<li>Use a comment to indicate the exercise number you are answering.</li>
-<li>Create an object with the value of your name.</li>
-<li>Create an object with the value of your age.</li>
-<li>Determine the data type of each of the two objects you created above with the <code>class()</code> function.</li>
-<li>Use one of the strategies you learned in <a href="#getting-help">Getting Help</a> to look up what the <code>rm()</code> function does. How would you use this on the objects you created in Questions 3 and 4?</li>
-<li>Create a vector of the following names: Marcia, Jan, Cindy. Assign this to an object called <code>brady_girls</code>.</li>
-<li>Create another vector of the following names: Greg, Peter, Bobby. Assign this to an object called <code>brady_boys</code>.</li>
-<li>Combine the <code>brady_girls</code> and <code>brady_boys</code> vectors together and assign to an object called <code>brady_bunch</code>.</li>
-<li>How would you subset the 4th element in the <code>brady_bunch</code> vector?</li>
-<li>Call <code>library(help = "datasets")</code> to explore the various datasets contained in the <code>datasets</code> package. This package contains a number of example datasets you can use for practice.</li>
-<li>Use <code>head()</code> to look at the beginning of the dataset called <code>ToothGrowth</code>.</li>
-<li>How would you find the number of columns and rows in <code>ToothGrowth</code>? How would you find summary information about this dataset?</li>
-<li>Use bracket notation to select the item in the 5th row and 2nd column of <code>ToothGrowth</code>.</li>
-<li>Use bracket notation to select the 5th through 10th rows of <code>ToothGrowth</code>.</li>
-<li>Use dollar sign notation to look at the <code>len</code> column of <code>ToothGrowth</code>.</li>
-<li>Find the mean of the <code>len</code> column.</li>
-<li>Use logical subsetting to save all the rows where the value in the <code>supp</code> column is <code>OJ</code>. Assign this to a new object.</li>
-</ol>
+<p>We have only covered 2 of the plots you can use to explore a dataset using Base R, we like these because they allow for quick checks of variables in the data. If you want to do anything beyond very simple plots, though, it’s generally better to switch to ggplot2 which you will learn in Session 3 of this series.</p>
 
 
+</section>
 </section>
 
 
