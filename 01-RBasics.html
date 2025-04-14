@@ -127,15 +127,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./01-RBasics.html" aria-current="page"> 
-<span class="menu-text">R Basics</span></a>
+<span class="menu-text">Session 1 Intro to R and Rtudio</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./02-DataWrangling.html"> 
-<span class="menu-text">Data Wrangling</span></a>
+<span class="menu-text">Session 2 Data Wrangling</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./03-DataVisualization.html"> 
-<span class="menu-text">Data Visualization</span></a>
+<span class="menu-text">Session 3 Data Visualization</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -830,9 +830,19 @@ Solution
 </div>
 </div>
 <p>Remember we used <code>c()</code> to add a value to our character vector.</p>
-<p>::: ::: {.callout-important title=“Data Types”}</p>
+<div class="callout callout-style-default callout-important callout-titled" title="Data Types">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Types
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>There are numerous data types. Some of the other most common data types you will encounter are numeric data, character data and logical data. Vectors of one data type only are called <strong>atomic vectors</strong>. Read more about vectors and data types in the book <a href="https://r4ds.had.co.nz/vectors.html">R for Data Science</a></p>
-<p>:::</p>
+</div>
+</div>
 <p>Now let’s try working with some logical data. Logical data is the values<code>TRUE</code>, <code>FALSE</code>, or <code>NA</code></p>
 <p>We want to record if our patients have been fully vaccinated. We will record this as TRUE if they have been, FALSE if they have not been, and NA if we do not have this information.</p>
 <div class="cell" data-layout-align="center">
@@ -886,7 +896,7 @@ CHALLENGE
 <li>Add the names Carol, Mike, and Alice to the <code>brady_bunch</code> vector</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -895,7 +905,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>brady_girls &lt;- c("Marcia", "Jan", "Cindy")</code></li>
@@ -974,7 +984,7 @@ CHALLENGE
 </ol>
 <p>Why do you think this happens?</p>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -983,7 +993,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li>All elements in the vector are turned to character data.</li>
@@ -1093,7 +1103,7 @@ CHALLENGE
 <li>Use bracket notation to access the 7th through 9th elements of hte <code>brady_bunch</code> vector.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1102,7 +1112,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>brady_bunch[4]</code></li>
@@ -1454,7 +1464,7 @@ CHALLENGE
 <li>Use logical subsetting to save all the rows where the value in the <code>supp</code> column is <code>OJ</code>. Assign this to a new object.</li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1463,7 +1473,7 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <ol type="1">
 <li><code>head(ToothGrowth)</code></li>
