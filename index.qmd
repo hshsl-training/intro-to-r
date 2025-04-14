@@ -15,7 +15,8 @@ css: styles.scss
 
 ## Course Description: 
 
-**Session 1: Intro to R and RStudio**
+**[Session 1: Intro to R and RStudio](01-RBasics.Rmd)**
+
 This session will provide a solid foundation in working with R and RStudio and lay the groundwork to enable participants to explore more advanced topics in R programming. 
 Topics covered include:
 
@@ -25,7 +26,8 @@ Topics covered include:
 - Identifying R data types and structures
 - Working with scripts
  
-**Session 2: Data Wrangling with R - Introduction to the Tidyverse**
+**[Session 2: Data Wrangling with R - Introduction to the Tidyverse](02-DataWrangling.qmd)**
+
 This session will introduce the concept of “tidy” data, and the versatile collection of packages known as the Tidyverse. Participants will get hands-on experience wrangling real datasets.
 Topics covered include:
 
@@ -35,7 +37,8 @@ Topics covered include:
 -	Creating variables
 -	Joining data tables
  
-**Session 3: Data Visualization in R with ggplot2**
+**[Session 3: Data Visualization in R with ggplot2](03-DataVisualization.qmd)**
+
 Learn how to use ggplot2, a robust Tidyverse package used to create high quality graphics for exploring and communicating your data. We will go beyond basic graphs and learn how to customize and annotate our graphs for more effective storytelling. 
 Topics covered include:
 

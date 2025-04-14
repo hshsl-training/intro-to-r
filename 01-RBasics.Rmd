@@ -642,7 +642,7 @@ patients + "Sue"
 Remember we used `c()` to
 add a value to our character vector.
 
-::: ::: {.callout-important title="Data Types"}
+::: {.callout-important title="Data Types"}
 
 There are numerous data types. Some of the other
 most common data types you will encounter are numeric data, character

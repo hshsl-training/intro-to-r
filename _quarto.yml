@@ -23,11 +23,11 @@ website:
     left:
       - text: "Home"
         file: index.qmd
-      - text: R Basics
+      - text: Session 1 Intro to R and Rtudio
         file: 01-RBasics.Rmd
-      - text: Data Wrangling
+      - text: Session 2 Data Wrangling
         file: 02-DataWrangling.qmd
-      - text: Data Visualization
+      - text: Session 3 Data Visualization
         file: 03-DataVisualization.qmd
      # - sidebar:sidebar id - repeat as needed for sidebar entries
     
