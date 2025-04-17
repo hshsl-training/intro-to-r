@@ -617,7 +617,51 @@ yearly_count_state %>% arrange(desc(TotalCount))
 ```
 
 
+### Try it Yourself!
 
+::: {.callout-tip title="CHALLENGE" }
+
+For this exercise, we'll use data from the `gapminder` package. Gapminder is a dataset of global socioeconomic data.
+ 
+1. Install the `gapminder` package either using the Install pane or the `install.packages()` function.
+1. Load the `gapminder` package with the `library` function.
+1. Use `glimpse()` to see the available columns in `gapminder`
+1. Use `distinct()` on the `year` column to see available years in the data set.
+1. Use `filter()` to save just the rows from the most recent available year. Assign this to a new object called `gap_summary`.
+1. Group `gap_summary` by `continent`. Use `summarize()` to calculate the mean of the `lifeExp` and `gdpPercap` columns, and sum of the `pop` column. Use the pipe (`%>%`) to add this step to the previous step.
+1. Use arrange to sort `gap_summary` in descending order by your new mean gdpPercap column.
+
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. `install.packages("gapminder")`
+1. `library(gapminder)`
+1. `glimpse(gapminder)`
+1. `distinct(gapminder, year)` OR `gapminder %>% distinct(year)`
+1. 
+```r
+gap_summary <- gapminder %>% 
+filter(year == 2007)
+```
+6.. 
+```r
+gap_summary <- gapminder %>%  
+filter(year == 2007) %>% 
+group_by(continent) %>% 
+summarize(mean_lifeExp = mean(lifeExp), mean_gdpPercap = mean(gdpPercap), total_pop = sum(pop))
+```
+7.
+```r
+gap_summary <- gapminder %>% 
+filter(year == 2007) %>% 
+group_by(continent) %>%  
+summarize(mean_lifeExp = mean(lifeExp), mean_gdpPercap = mean(gdpPercap), total_pop = sum(pop)) %>%
+arrange(desc(mean_gdpPercap))
+```
+
+::::
+
+:::
 
 
 ## Joining Datasets
