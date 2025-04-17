@@ -177,7 +177,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#changing-and-creating-variables-with-mutate" id="toc-changing-and-creating-variables-with-mutate" class="nav-link" data-scroll-target="#changing-and-creating-variables-with-mutate">Changing and creating variables with <code>mutate()</code></a></li>
   <li><a href="#grouping-and-summarizing" id="toc-grouping-and-summarizing" class="nav-link" data-scroll-target="#grouping-and-summarizing">Grouping and Summarizing</a></li>
-  <li><a href="#sorting-datasets-with-arrange" id="toc-sorting-datasets-with-arrange" class="nav-link" data-scroll-target="#sorting-datasets-with-arrange">Sorting datasets with <code>arrange()</code></a></li>
+  <li><a href="#sorting-datasets-with-arrange" id="toc-sorting-datasets-with-arrange" class="nav-link" data-scroll-target="#sorting-datasets-with-arrange">Sorting datasets with <code>arrange()</code></a>
+  <ul class="collapse">
+  <li><a href="#try-it-yourself-2" id="toc-try-it-yourself-2" class="nav-link" data-scroll-target="#try-it-yourself-2">Try it Yourself!</a></li>
+  </ul></li>
   <li><a href="#joining-datasets" id="toc-joining-datasets" class="nav-link" data-scroll-target="#joining-datasets">Joining Datasets</a></li>
   <li><a href="#long-vs-wide-formats" id="toc-long-vs-wide-formats" class="nav-link" data-scroll-target="#long-vs-wide-formats">Long vs Wide formats</a></li>
   </ul>
@@ -1025,14 +1028,76 @@ $ CountValue                  &lt;dbl&gt; 85, 120, 84, 106, 39, 45, 28, 140, 48,
 # ℹ 4,045 more rows</code></pre>
 </div>
 </div>
+<section id="try-it-yourself-2" class="level3">
+<h3 class="anchored" data-anchor-id="try-it-yourself-2">Try it Yourself!</h3>
+<div class="callout callout-style-default callout-tip callout-titled" title="CHALLENGE">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+CHALLENGE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For this exercise, we’ll use data from the <code>gapminder</code> package. Gapminder is a dataset of global socioeconomic data.</p>
+<ol type="1">
+<li>Install the <code>gapminder</code> package either using the Install pane or the <code>install.packages()</code> function.</li>
+<li>Load the <code>gapminder</code> package with the <code>library</code> function.</li>
+<li>Use <code>glimpse()</code> to see the available columns in <code>gapminder</code></li>
+<li>Use <code>distinct()</code> on the <code>year</code> column to see available years in the data set.</li>
+<li>Use <code>filter()</code> to save just the rows from the most recent available year. Assign this to a new object called <code>gap_summary</code>.</li>
+<li>Group <code>gap_summary</code> by <code>continent</code>. Use <code>summarize()</code> to calculate the mean of the <code>lifeExp</code> and <code>gdpPercap</code> columns, and sum of the <code>pop</code> column. Use the pipe (<code>%&gt;%</code>) to add this step to the previous step.</li>
+<li>Use arrange to sort <code>gap_summary</code> in descending order by your new mean gdpPercap column.</li>
+</ol>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><code>install.packages("gapminder")</code></li>
+<li><code>library(gapminder)</code></li>
+<li><code>glimpse(gapminder)</code></li>
+<li><code>distinct(gapminder, year)</code> OR <code>gapminder %&gt;% distinct(year)</code></li>
+<li></li>
+</ol>
+<div class="sourceCode" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>gap_summary <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>6..</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>gap_summary <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span>  </span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span> </span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">mean_lifeExp =</span> <span class="fu">mean</span>(lifeExp), <span class="at">mean_gdpPercap =</span> <span class="fu">mean</span>(gdpPercap), <span class="at">total_pop =</span> <span class="fu">sum</span>(pop))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol start="7" type="1">
+<li></li>
+</ol>
+<div class="sourceCode" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>gap_summary <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a><span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2007</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a><span class="fu">group_by</span>(continent) <span class="sc">%&gt;%</span>  </span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(<span class="at">mean_lifeExp =</span> <span class="fu">mean</span>(lifeExp), <span class="at">mean_gdpPercap =</span> <span class="fu">mean</span>(gdpPercap), <span class="at">total_pop =</span> <span class="fu">sum</span>(pop)) <span class="sc">%&gt;%</span></span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a><span class="fu">arrange</span>(<span class="fu">desc</span>(mean_gdpPercap))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="joining-datasets" class="level2">
 <h2 class="anchored" data-anchor-id="joining-datasets">Joining Datasets</h2>
 <p>Of course, looking at total counts in each state is not the most helpful metric without taking population into account. To rectify this, let’s try joining some historical population data with our measles data.</p>
 <p>First we need to import the population data<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>hist_pop <span class="ot">&lt;-</span></span>
-<span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_csv</span>(<span class="st">"data/Historical_Population_by_State.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>hist_pop <span class="ot">&lt;-</span></span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">read_csv</span>(<span class="st">"data/Historical_Population_by_State.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>Rows: 107 Columns: 52
 ── Column specification ────────────────────────────────────────────────────────
@@ -1057,21 +1122,21 @@ dbl (52): DATE, ALASKA, ALABAMA, ARKANSAS, ARIZONA, CALIFORNIA, COLORADO, CO...
 <li>the <em>values_to</em> column variable we wish to create and fill with values associated with the <em>cols</em> provided.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>hist_pop_long <span class="ot">&lt;-</span> hist_pop <span class="sc">%&gt;%</span></span>
-<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(ALASKA<span class="sc">:</span>WYOMING,</span>
-<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"state"</span>,</span>
-<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"pop1000"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>hist_pop_long <span class="ot">&lt;-</span> hist_pop <span class="sc">%&gt;%</span></span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(ALASKA<span class="sc">:</span>WYOMING,</span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>               <span class="at">names_to =</span> <span class="st">"state"</span>,</span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>               <span class="at">values_to =</span> <span class="st">"pop1000"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(hist_pop_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(hist_pop_long)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Now our two datasets have similar structures, a column of state names, a column of years, and a column of values. Let’s join these two datasets by the state and year columns. Note that if both sets have the same column names, you do not need to specify anything in the by argument. We use a left join here which preserves all the rows in our measles dataset and adds the matching rows from the population dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>measles_joined<span class="ot">&lt;-</span> yearly_count_state <span class="sc">%&gt;%</span> </span>
-<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(hist_pop_long, <span class="at">by=</span><span class="fu">join_by</span>(state, Year <span class="sc">==</span> DATE))</span>
-<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>measles_joined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>measles_joined<span class="ot">&lt;-</span> yearly_count_state <span class="sc">%&gt;%</span> </span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(hist_pop_long, <span class="at">by=</span><span class="fu">join_by</span>(state, Year <span class="sc">==</span> DATE))</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>measles_joined</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4,055 × 4
 # Groups:   Year [96]
@@ -1105,7 +1170,7 @@ CHALLENGE
 <li><p>Try joining <code>measles_yearly_rates</code> to <code>states</code>. What variable do you need to join by?</p></li>
 </ol>
 <div class="callout callout-style-default callout-tip no-icon callout-titled" title="Solution">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -1114,17 +1179,17 @@ Solution
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. </span></span>
-<span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>measles_yearly_rates <span class="ot">&lt;-</span></span>
-<span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>  measles_joined <span class="sc">%&gt;%</span> </span>
-<span id="cb63-4"><a href="#cb63-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">epi_rate =</span> (TotalCount <span class="sc">/</span> pop1000)<span class="sc">*</span><span class="dv">100</span>)</span>
-<span id="cb63-5"><a href="#cb63-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb63-6"><a href="#cb63-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. </span></span>
-<span id="cb63-7"><a href="#cb63-7" aria-hidden="true" tabindex="-1"></a>yearly_rates_joined <span class="ot">&lt;-</span> measles_yearly_rates <span class="sc">%&gt;%</span> </span>
-<span id="cb63-8"><a href="#cb63-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(states, <span class="at">by =</span> <span class="fu">join_by</span>(state <span class="sc">==</span> name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 1. </span></span>
+<span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>measles_yearly_rates <span class="ot">&lt;-</span></span>
+<span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a>  measles_joined <span class="sc">%&gt;%</span> </span>
+<span id="cb66-4"><a href="#cb66-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">epi_rate =</span> (TotalCount <span class="sc">/</span> pop1000)<span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb66-5"><a href="#cb66-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb66-6"><a href="#cb66-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 2. </span></span>
+<span id="cb66-7"><a href="#cb66-7" aria-hidden="true" tabindex="-1"></a>yearly_rates_joined <span class="ot">&lt;-</span> measles_yearly_rates <span class="sc">%&gt;%</span> </span>
+<span id="cb66-8"><a href="#cb66-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">left_join</span>(states, <span class="at">by =</span> <span class="fu">join_by</span>(state <span class="sc">==</span> name))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
