@@ -17,9 +17,17 @@ By the end of this session, students will be able to:
 -   Describe a typical workflow for exploring and wrangling data.
 
 
-::: {.callout-tip appearence="minimal" collapse="true"}
+::: {.callout-tip appearence="minimal"}
 
 ### Follow Along at Home
+
+There are two options:
+
+#### RStudio
+1. Follow the instructions above to download R and RStudio to your personal computer
+2. Download the folder `Session02_DataWRangling` from <https://osf.io/6ra5v/files/osfstorage> and unzip it to your computer in a place you'll be able to find it easily, such as your Desktop or Documents folder.
+
+#### Posit Cloud
 
 Posit (RStudio) Cloud is a browser-based version of RStudio. It will
 allow you to use RStudio without needing to download anything to your
@@ -29,16 +37,27 @@ Get Started:
 
 1.  Create your free RStudio Cloud account at
     <https://posit.cloud/plans/free>.
-2.  Go to the class project <https://posit.cloud/content/8458222>
+2.  Go to the <a href="https://posit.cloud/content/8458222" target="_blank">class project</a>
 3.  Note the text that marks this as a Temporary Copy. Select the
     `Save a Permanent Copy` button to begin working!
     
 :::
 
+## RStudio Projects
+
+RStudio provides a useful feature called Projects which act like a container for your work. As you use R more, you will find it useful to make sure your files and environment for one real-world project are kept together and separate from other projects.
+
+Let’s create a new project now.
+
+1. Go to `File > New Project`
+1. In `Create project from` menu choose `Existing Directory`
+1. Browse to `Desktop > Session01_DataWrangling`
+1. Select the check box that says `Open in New Session`
+
+
 ## R Scripts
 
-A script is a text file in which you write your code. R scripts are generally recognized by the `.R` file extension. Scripts make it easy to re-run that code when you need to. In addition to code, your script can also have comments, which start with a `#` symbol. These comments make your script more human readable, but are ignored by the computer. 
-
+A script is a text file in which you write your code. R scripts are generally recognized by the `.R` file extension. In our last session, we primarily used the R console to interactively work with code. In general though, you will want to save code in a script. Scripts make it easy to re-run that code when you need to. In addition to code, your script can also have comments, which start with a `#` symbol. These comments make your script more human readable, but are ignored by the computer. 
 To get started in this lesson - open up the script in your RStudio Project called `01_DataWrangling.R` 
 
 ## Welcome to the Tidyverse
@@ -103,7 +122,7 @@ performs one or more tasks, and often returns some kind of output. The
 `library()` function takes the name of the package to load as it's
 argument.
 
-How do you know what arguments a function takes? For that you need to
+Do you recall from our last session how to know what arguments a function takes? For that you need to
 turn to the documentation of a particular package, or from within
 RStudio you can look up a function with `?function-name`. Let's try it
 with the `library()` function.
@@ -129,6 +148,30 @@ The **`tidyverse`** is so named from the concept of "tidy data". Data is conside
 
 [^2]: read more about tidy data
     https://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html
+    
+Let's look at the difference between a "tidy" and "untidy" dataset
+
+```{r}
+#| echo: false
+
+library(tidyverse)
+head(relig_income)
+```
+
+This is a common type of untidy data, where the column headers are actually values of a variable.
+
+A tidy version of this dataset would have just three columns: `religion`, `income`, and `frequency`.
+
+```{r}
+#| echo: false
+
+relig_income %>% 
+  pivot_longer(-religion, names_to = "income", values_to = "frequency") %>% 
+  head()
+
+```
+
+Data that is untidy like the example, is often called **wide** data, while tidy data is described as **long**. We'll learn more about wide and long data and how to convert one to the other later in this lesson.
 
 Data "in the wild" often isn't tidy, but the tidyverse packages can help
 you create and analyze tidy datasets.
@@ -189,19 +232,17 @@ states <- read_csv(file = "data/states.csv")
 ```
 
 
-
 ## Exploring and Summarizing data
 
 Data wrangling, also known as data cleaning or data munging, involves preparing raw data for analysis by transforming it into a more useful format. This process includes detecting and correcting errors, handling missing values, and reorganizing data for analysis. Using the tidyverse, we can streamline these tasks efficiently. After importing the data, you'll typically start by exploring it, identifying patterns, and making necessary adjustments to prepare it for visualization and further analysis. This foundational step ensures that your data is accurate, consistent, and ready for insightful exploration.
 
 ### Vectors and Data Frames and Tibbles oh my!
 
-First, it's important to understand the type of object we just created. In R, tabular data like you find in a spreadsheet is stored in a **data frame**, one of the fundamental **data structures** in R. A data frame is a rectangular, two-dimensional data structure. That is, it has both columns and rows. Data frames can store multiple **data types**, such as numeric, character, and logical data, also known as classes. 
+In our last session, we practiced creating vectors using the `c()` function. A vector is a one-dimensional data structure. A vector can have only one data type, such as character (e.g. a patient's name), numeric (e.g. a patient’s weight), and logical (e.g. vaccine status TRUE or FALSE).
 
-A **tibble** is a tidyverse version of the standard R data frame. For our purposes, the differences are minor enough that we can generally use the terms interchangeably, but to be precise, we will be working with tibbles in this lesson. All tibbles are data frames, but not all data frames are tibbles. 
+What we just created and loaded into RStudio is a data frame which we looked at briefly last week. In R, tabular data like you find in a spreadsheet is stored in a data frame, one of the fundamental data structures in R. Data frames are created from multiple vectors, where each column in a data frame is a vector of the same length. A data frame is a rectangular, two-dimensional data structure. That is, they have both columns and rows. Data frames can store multiple data types (one type per column).
 
-Another important R data structure is a **vector**. A vector is a one-dimensional data structure. That is, it is simply a sequence of elements. A vector can have only one data type. Data frames are created from multiple vectors, that is, each column in a data frame is a vector of the same length.
-
+A tibble is a tidyverse version of the standard R data frame. For our purposes, the differences are minor enough that we can generally use the terms interchangeably, but to be precise, we will be working with tibbles in this lesson. All tibbles are data frames, but not all data frames are tibbles. 
 
 ### Base R functions for exploring data
 
@@ -574,6 +615,9 @@ By default, arrange sorts in ascending order. To sort by descending order we use
 ```{r arrange-desc}
 yearly_count_state %>% arrange(desc(TotalCount))
 ```
+
+
+
 
 
 ## Joining Datasets
