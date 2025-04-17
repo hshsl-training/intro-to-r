@@ -130,7 +130,7 @@ knitr::include_graphics("images/rstudio.png")
 ```
 
 
-::: {.callout-tip appearence="minimal" collapse="true"}
+::: {.callout-tip appearence="minimal"}
 
 ### Follow Along at Home
 
