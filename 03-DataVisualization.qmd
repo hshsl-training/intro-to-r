@@ -23,10 +23,17 @@ knitr:
 6. Use the `read_csv()` function to import the `yearly_rates_joined` and the `region_summary` csv files.
 
 
-::: {.callout-tip appearence="minimal" collapse="true"}
+::: {.callout-tip appearence="minimal"}
 
 ### Follow Along at Home
 
+There are two options:
+
+#### RStudio
+1. Follow the instructions above to download R and RStudio to your personal computer
+2. Download the folder `Session02_DataWRangling` from <https://osf.io/6ra5v/files/osfstorage> and unzip it to your computer in a place you'll be able to find it easily, such as your Desktop or Documents folder.
+
+#### Posit Cloud
 Posit (RStudio) Cloud is a browser-based version of RStudio. It will
 allow you to use RStudio without needing to download anything to your
 computer. Posit Cloud automatically organizes things into Projects. You can also easily share your R projects with others. 
@@ -138,6 +145,43 @@ As we'll see later in this lesson, mapping a variable to an aesthetic will be es
 When you map an aesthetic with `aes()` in the `ggplot()` function it is inherited by all subsequent layers. When you map in a `geom_*()` function it is applied only to that layer.
 :::
 
+
+### Try it Yourself!
+::: {.callout-tip title="CHALLENGE" }
+
+1. Use the following code to create a data frame of division and average measles rates per 100,000 people.
+
+```r
+division_summary <- yearly_rates_joined %>% 
+group_by(division) %>% 
+summarize(avg_rate = mean(epi_rate))
+
+```
+2. Create a bar chart of the `division_summary` object you just created.
+3. Adjust the color, fill, linewidth, and width of your bar chart to whatever you want!
+
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+2. Creating the bar chart:
+
+```r
+division_summary %>% 
+ggplot(aes(x=division, y=avg_rate)) + 
+geom_bar(stat="identity")
+```
+3. Adjusting the aesthetics (for example! Yours will vary.)
+
+```r
+division_summary %>% 
+ggplot(aes(x=division, y=avg_rate)) + 
+geom_bar(stat="identity", fill = "turquoise", color="salmon", linewidth= 1.3, width=0.6)
+```
+::::
+
+:::
+
+
 ## Telling a data story
 
 Now let's start using ggplot2 to help us answer our research question - how did the introduction of the vaccine affect measles rates in the country? We'll do this with a line graph, which is useful for showing change over time.
@@ -224,6 +268,34 @@ Now, we have a pretty nice looking graph. Finally, let's save our plot to a png 
 ```{r save plot, eval=FALSE, echo=TRUE}
 ggsave("figures/yearly_measles_count.png", plot = yearly_count_line)
 ```
+
+
+
+### Try it Yourself!
+::: {.callout-tip title="CHALLENGE" }
+1. Change the y-axis of `yearly_count_line` so that there is a tick mark every 150000 instead of every 250000. 
+2. Add an additional vertical line and annotation for 1971 when the MMR vaccine was introduced. Make this line look distinct from the 1963 line.
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. 
+```r
+yearly_count_line <- yearly_count_line + 
+scale_y_continuous(breaks = seq(from=0, to=1000000, by = 150000))
+```
+
+2. You may need to experiment with the look and placement of the line.
+
+```r
+yearly_count_line <- yearly_count_line + 
+geom_vline(xintercept = 1971, color="blue", linetype="dotted") +
+annotate(geom = "label", x=1977, y=700000, label="1971: MMR vaccine introduced")
+```
+
+::::
+
+:::
+
 
 ## Working with Three Variables
 
