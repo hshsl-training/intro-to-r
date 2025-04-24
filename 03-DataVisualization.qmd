@@ -386,6 +386,37 @@ regional_rates %>%
   theme(axis.title.y = element_text(angle=0, vjust = 0.5, hjust = 0.5))
 ```
 
+
+### Try it Yourself!
+::: {.callout-tip title="CHALLENGE" }
+
+1. Start with the `yearly_rates_joined` data frame. `filter()` the data frame to include only rows where the `division` is "South Atlantic". Then `group_by()` both `Year` and `State`. Finally, `summarize()` the `epi_rate` column to get the average rate per group.  Assign this to a new object called `s_atlantic_rates` HINT: Refer to the code we used to create `regional_rates` to guide you here.
+1. Create a line graph of `s_atlantic_rates` showing the average rate per year, with a line for each state.
+1. Adjust the line aesthetics (color, linewidth, linetype), labels, scales, and theme as you see fit! Experiment with different options.
+
+:::: {.callout-tip title="Solution" icon=false collapse="true"}
+
+1. 
+```r
+s_atlantic_cases <- yearly_rates_joined %>% 
+  filter(division == "South Atlantic") %>% 
+  group_by(Year, State) %>% 
+  summarize(avg_rate = mean(epi_rate, na.rm=TRUE))
+```
+
+2.
+```r
+s_atlantic_cases %>% 
+  ggplot(aes(x = Year, y=avg_rate, group = State, color=State)) +
+  geom_line()
+```
+
+3. Your graph will vary - see the `yearly_count_line` example for some things you can adjust.
+::::
+
+:::
+
+
 ## Faceting and Small Multiples
 
 Even with the adjustments we made, it can be difficult to understand a graph with too much data. Even with just five lines it can be hard to see what's happening. A good practice is to break out each group into individual graphs called small multiples or facets.
